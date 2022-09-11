@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fonde (1).png-7abe37d4dc1aedb3fc437db87d7aba9c.stex"
+path="res://.import/oveje.png-8d92ff3a525d59eb1bde855928b1c7dc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://environment/fonde (1).png"
-dest_files=[ "res://.import/fonde (1).png-7abe37d4dc1aedb3fc437db87d7aba9c.stex" ]
+source_file="res://juego1/oveja/oveje.png"
+dest_files=[ "res://.import/oveje.png-8d92ff3a525d59eb1bde855928b1c7dc.stex" ]
 
 [params]
 

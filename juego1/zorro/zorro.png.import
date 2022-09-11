@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fondo.png-c3b0f68c9d079584301b9f8f2f75425b.stex"
+path="res://.import/zorro.png-b3c838c308dbe657a1743339ffad960d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://environment/fondo.png"
-dest_files=[ "res://.import/fondo.png-c3b0f68c9d079584301b9f8f2f75425b.stex" ]
+source_file="res://juego1/zorro/zorro.png"
+dest_files=[ "res://.import/zorro.png-b3c838c308dbe657a1743339ffad960d.stex" ]
 
 [params]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://zorro/zorre.png" type="Texture" id=1]
-[ext_resource path="res://zorro/zorro.gd" type="Script" id=2]
-[ext_resource path="res://zorro/Area2D.gd" type="Script" id=3]
+[ext_resource path="res://juego1/zorro/zorre.png" type="Texture" id=1]
+[ext_resource path="res://juego1/zorro/zorro.gd" type="Script" id=2]
+[ext_resource path="res://juego1/zorro/Area2D.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 20, 20.5 )

@@ -19,13 +19,17 @@ func ovejasMuertas():
 	ovejaEli-=1	
 	get_node("InterfazDeUsuario/VBoxContainer/ovejasComidas").text="0"+str(ovejaEli)
 	if(ovejaEli==0):
-		get_tree().change_scene("res://ganoZorro.tscn")
+		get_tree().change_scene("res://juego1/ganoZorro.tscn")
 	
 	print(ovejaEli)
 
-func _on_Button_pressed():
-	get_tree().change_scene("res://world.tscn")
+
+	
 
 
 func _on_ir_a_menu_pressed():
 	get_tree().change_scene("res://Menu.tscn")
+
+
+func _on_Button_pressed():
+	get_tree().change_scene("res://juego1/world.tscn")
