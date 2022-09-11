@@ -1,0 +1,92 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://zorro/zorro.tscn" type="PackedScene" id=1]
+[ext_resource path="res://environment/environment.tscn" type="PackedScene" id=2]
+[ext_resource path="res://oveja/oveja.tscn" type="PackedScene" id=3]
+[ext_resource path="res://world.gd" type="Script" id=4]
+[ext_resource path="res://environment/InterfazDeUsuario.tscn" type="PackedScene" id=5]
+[ext_resource path="res://environment/LineaGanar.tscn" type="PackedScene" id=6]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.156863, 0.643137, 0.14902, 1 )
+
+[node name="world" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="environment" parent="." instance=ExtResource( 2 )]
+position = Vector2( 5, -3 )
+
+[node name="LineaGanar" parent="environment" instance=ExtResource( 6 )]
+position = Vector2( 235, 209 )
+
+[node name="zorro" parent="." instance=ExtResource( 1 )]
+position = Vector2( 301, 206 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 10.0
+margin_top = 189.0
+margin_right = 81.0
+margin_bottom = 228.0
+custom_colors/font_color_disabled = Color( 0.329412, 0.827451, 0.290196, 1 )
+custom_styles/hover = SubResource( 1 )
+text = "reiniciar"
+
+[node name="ir a menu" type="Button" parent="."]
+margin_left = 8.0
+margin_top = 258.0
+margin_right = 81.0
+margin_bottom = 283.0
+text = "ir a menu"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+expand = true
+
+[node name="oveja" parent="." instance=ExtResource( 3 )]
+position = Vector2( 515, 15 )
+
+[node name="oveja13" parent="." instance=ExtResource( 3 )]
+position = Vector2( 42, 312 )
+
+[node name="oveja2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 512, 408 )
+
+[node name="oveja3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 615, 407 )
+
+[node name="oveja4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 611, 308 )
+
+[node name="oveja5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 619, 209 )
+
+[node name="oveja6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 614, 109 )
+
+[node name="oveja7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 615, 13 )
+
+[node name="oveja8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 708, 403 )
+
+[node name="oveja9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 711, 306 )
+
+[node name="oveja10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 714, 208 )
+
+[node name="oveja11" parent="." instance=ExtResource( 3 )]
+position = Vector2( 716, 111 )
+
+[node name="oveja12" parent="." instance=ExtResource( 3 )]
+position = Vector2( 707, 18 )
+
+[node name="InterfazDeUsuario" parent="." instance=ExtResource( 5 )]
+margin_left = 7.0
+margin_top = 328.0
+margin_right = 763.0
+margin_bottom = 376.0
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="ir a menu" to="." method="_on_ir_a_menu_pressed"]

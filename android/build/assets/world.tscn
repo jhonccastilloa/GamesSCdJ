@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://zorro/zorro.tscn" type="PackedScene" id=1]
+[ext_resource path="res://environment/environment.tscn" type="PackedScene" id=2]
+[ext_resource path="res://oveja/oveja.tscn" type="PackedScene" id=3]
+[ext_resource path="res://world.gd" type="Script" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.156863, 0.643137, 0.14902, 1 )
+
+[node name="world" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="environment" parent="." instance=ExtResource( 2 )]
+
+[node name="zorro" parent="." instance=ExtResource( 1 )]
+position = Vector2( 294, 211 )
+
+[node name="Button" type="Button" parent="."]
+margin_top = 189.0
+margin_right = 71.0
+margin_bottom = 228.0
+custom_colors/font_color_disabled = Color( 0.329412, 0.827451, 0.290196, 1 )
+custom_styles/hover = SubResource( 1 )
+text = "reiniciar"
+
+[node name="ir a menu" type="Button" parent="."]
+margin_left = 4.0
+margin_top = 248.0
+margin_right = 72.0
+margin_bottom = 273.0
+text = "ir a menu"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+expand = true
+
+[node name="oveja" parent="." instance=ExtResource( 3 )]
+position = Vector2( 505, 31 )
+
+[node name="oveja2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 503, 402 )
+
+[node name="oveja3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 615, 407 )
+
+[node name="oveja4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 603, 308 )
+
+[node name="oveja5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 605, 210 )
+
+[node name="oveja6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 605, 116 )
+
+[node name="oveja7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 611, 25 )
+
+[node name="oveja8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 701, 402 )
+
+[node name="oveja9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 704, 300 )
+
+[node name="oveja10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 707, 212 )
+
+[node name="oveja11" parent="." instance=ExtResource( 3 )]
+position = Vector2( 707, 112 )
+
+[node name="oveja12" parent="." instance=ExtResource( 3 )]
+position = Vector2( 699, 20 )
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="ir a menu" to="." method="_on_ir_a_menu_pressed"]
