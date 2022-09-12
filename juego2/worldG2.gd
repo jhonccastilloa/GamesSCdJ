@@ -1,8 +1,11 @@
 extends Node2D
 
 var figure = load("res://juego2/scenes/xo.tscn")
+var scene = load("res://juego2/scenes/end_game.tscn")
+
 var turno=0
 var current_figure=0
+var state_end_game=-2
 var board=[[-1,-1,-1],
 		   [-1,-1,-1],
 		   [-1,-1,-1]]
@@ -69,38 +72,33 @@ func cambiar_board(x,y):
 func win_board():
 	turno+=1
 #	print("el turno es "+ str(turno))
-	for i in range(0,3):
-		if board[0][i]==1 and board[1][i]==1 and board[2][i]==1:
-			print("gano "+ str(current_figure) )
-			get_tree().change_scene("res://juego2/scenes/end_game.tscn")
-	for i in range(0,3):
-		if board[0][i]==0 and board[1][i]==0 and board[2][i]==0:
-			print("gano "+ str(current_figure) )
-			get_tree().change_scene("res://juego2/scenes/end_game.tscn")
-	for j in range(0,3):
-		if board[j][0]==1 and board[j][1]==1 and board[j][2]==1:
-			print("gano horizaontal "+ str(current_figure) )
-			get_tree().change_scene("res://juego2/scenes/end_game.tscn")
-	for j in range(0,3):
-		if board[j][0]==0 and board[j][1]==0 and board[j][2]==0:
-			print("gano horizaontal "+ str(current_figure) )
-			get_tree().change_scene("res://juego2/scenes/end_game.tscn")
+	for j in range(0,2):
+		for i in range(0,3):
+			if board[0][i]==j and board[1][i]==j and board[2][i]==j:
+				print("gano "+ str(current_figure) )
+				state_end_game=	current_figure			
+				generate_scene()
+		for i in range(0,3):
+			if board[i][0]==j and board[i][1]==j and board[i][2]==j:
+				print("gano horizaontal "+ str(current_figure) )
+				state_end_game=	current_figure	
+				generate_scene()
+		if board[0][0]==j and  board[1][1]==j and board[2][2]==j:
+			print("gano diagonal "+ str(current_figure) )
+			state_end_game=	current_figure	
+			generate_scene()	
 
-	if board[0][0]==1 and  board[1][1]==1 and board[2][2]==1:
-		print("gano diagonal "+ str(current_figure) )
-		get_tree().change_scene("res://juego2/scenes/end_game.tscn")
-	if board[0][0]==0 and  board[1][1]==0 and board[2][2]==0:
-		print("gano diagonal "+ str(current_figure) )
-		get_tree().change_scene("res://juego2/scenes/end_game.tscn")
-
-	if board[0][2]==1 and  board[1][1]==1 and board[2][0]==1:
-		print("gano diagonal "+ str(current_figure) )
-		get_tree().change_scene("res://juego2/scenes/end_game.tscn")
-	if board[0][2]==0 and  board[1][1]==0 and board[2][0]==0:
-		print("gano diagonal "+ str(current_figure) )
-		get_tree().change_scene("res://juego2/scenes/end_game.tscn")
+		if board[0][2]==j and  board[1][1]==j and board[2][0]==j:
+			print("gano diagonal "+ str(current_figure) )
+			state_end_game=	current_figure	
+			generate_scene()
+			
 
 	if turno == 9:
 		print("no hay ganador")
-		get_tree().change_scene("res://juego2/scenes/end_game.tscn")
+		state_end_game=2
+		generate_scene()
 		
+func generate_scene():
+	var scn_instance = scene.instance()
+	add_child(scn_instance)
