@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://juego2/scenes/board.tscn" type="PackedScene" id=1]
+[ext_resource path="res://juego2/worldG2.gd" type="Script" id=2]
+
+[node name="worldG2" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="board" parent="." instance=ExtResource( 1 )]
