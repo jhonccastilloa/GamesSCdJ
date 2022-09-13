@@ -18,3 +18,7 @@ func _ready():
 
 func _on_JUGAR_pressed():
 	get_tree().change_scene("res://juego1/world.tscn")
+
+
+func _on_JUGAR2_pressed():
+	get_tree().change_scene("res://juego2/worldG2.tscn")

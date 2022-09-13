@@ -16,11 +16,15 @@ script = ExtResource( 6 )
 [node name="environment" parent="." instance=ExtResource( 4 )]
 position = Vector2( 5, -3 )
 
-[node name="LineaGanar" parent="environment" instance=ExtResource( 1 )]
-position = Vector2( 235, 209 )
+[node name="LineaGanar" parent="." instance=ExtResource( 1 )]
+position = Vector2( 149, 30 )
+collision_layer = 4
+collision_mask = 4
 
 [node name="zorro" parent="." instance=ExtResource( 2 )]
-position = Vector2( 301, 206 )
+position = Vector2( 299, 208 )
+collision_layer = 2
+collision_mask = 2
 
 [node name="Button" type="Button" parent="."]
 margin_left = 10.0
@@ -46,9 +50,6 @@ expand = true
 [node name="oveja" parent="." instance=ExtResource( 3 )]
 position = Vector2( 515, 15 )
 
-[node name="oveja13" parent="." instance=ExtResource( 3 )]
-position = Vector2( 42, 312 )
-
 [node name="oveja2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 512, 408 )
 
@@ -65,7 +66,7 @@ position = Vector2( 619, 209 )
 position = Vector2( 614, 109 )
 
 [node name="oveja7" parent="." instance=ExtResource( 3 )]
-position = Vector2( 615, 13 )
+position = Vector2( 614, 16 )
 
 [node name="oveja8" parent="." instance=ExtResource( 3 )]
 position = Vector2( 708, 403 )
@@ -82,11 +83,15 @@ position = Vector2( 716, 111 )
 [node name="oveja12" parent="." instance=ExtResource( 3 )]
 position = Vector2( 707, 18 )
 
+[node name="oveja13" parent="." instance=ExtResource( 3 )]
+position = Vector2( 50, 308 )
+
 [node name="InterfazDeUsuario" parent="." instance=ExtResource( 5 )]
 margin_left = 7.0
 margin_top = 328.0
 margin_right = 763.0
 margin_bottom = 376.0
 
+[connection signal="area_entered" from="LineaGanar" to="." method="_on_LineaGanar_area_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="ir a menu" to="." method="_on_ir_a_menu_pressed"]

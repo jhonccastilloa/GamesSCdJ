@@ -18,5 +18,6 @@ func _on_oveja_input_event(viewport, event, shape_idx):
 		else:
 			selected = false
 func ovejaDead(object):
-	get_parent().call("ovejasMuertas")
-	queue_free()
+#	get_parent().call("ovejasMuertas")
+#	queue_free()
+	print("se comio a la oveja")

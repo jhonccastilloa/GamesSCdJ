@@ -1,7 +1,8 @@
 extends Area2D
 var selected = false
 func _ready():
-	connect("area_entered",self,"ovejaDead")
+#	connect("area_entered",self,"ovejaDead")
+	pass
 	
 func _process(delta):
 	if selected:
@@ -17,6 +18,13 @@ func _on_oveja_input_event(viewport, event, shape_idx):
 			selected = true
 		else:
 			selected = false
-func ovejaDead(object):
-	get_parent().call("ovejasMuertas")
+#func ovejaDead():
+##	get_parent().call("ovejasMuertas")
+#	queue_free()
+#	print("oveja comidad")
+
+
+func _on_oveja_body_entered(body):
+	get_parent().ovejasMuertas()
 	queue_free()
+	pass # Replace with function body.

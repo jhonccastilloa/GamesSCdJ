@@ -92,8 +92,6 @@ func win_board():
 			print("gano diagonal "+ str(current_figure) )
 			state_end_game=	current_figure	
 			generate_scene()
-			
-
 	if turno == 9:
 		print("no hay ganador")
 		state_end_game=2
@@ -102,3 +100,7 @@ func win_board():
 func generate_scene():
 	var scn_instance = scene.instance()
 	add_child(scn_instance)
+
+
+func _on_SALIR_pressed():
+	get_tree().change_scene("res://Menu.tscn")
