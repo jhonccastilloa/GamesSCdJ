@@ -78,24 +78,34 @@ func win_board():
 				print("gano "+ str(current_figure) )
 				state_end_game=	current_figure			
 				generate_scene()
+				get_node("board")._end_game()
+				break
 		for i in range(0,3):
 			if board[i][0]==j and board[i][1]==j and board[i][2]==j:
 				print("gano horizaontal "+ str(current_figure) )
 				state_end_game=	current_figure	
 				generate_scene()
+				get_node("board")._end_game()
+				break
 		if board[0][0]==j and  board[1][1]==j and board[2][2]==j:
 			print("gano diagonal "+ str(current_figure) )
 			state_end_game=	current_figure	
-			generate_scene()	
-
+			generate_scene()
+			get_node("board")._end_game()
+			break
 		if board[0][2]==j and  board[1][1]==j and board[2][0]==j:
 			print("gano diagonal "+ str(current_figure) )
 			state_end_game=	current_figure	
 			generate_scene()
+			get_node("board")._end_game()
+			break
 	if turno == 9:
 		print("no hay ganador")
 		state_end_game=2
 		generate_scene()
+		get_node("board")._end_game()
+		
+		
 		
 func generate_scene():
 	var scn_instance = scene.instance()
