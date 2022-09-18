@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/board.png-e9118e7ac8a4b2d2cd4cd2fdde5c1d18.stex"
+path="res://.import/kisspng-a-bag-of-marbles-glass-game-information-spot-clipart-5ad86be5d44ce3.5452474915241328378696.png-d7f35ab1ccfe71d44215120702f0eff2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://juego2/envioronment/board.png"
-dest_files=[ "res://.import/board.png-e9118e7ac8a4b2d2cd4cd2fdde5c1d18.stex" ]
+source_file="res://juego3/environment/kisspng-a-bag-of-marbles-glass-game-information-spot-clipart-5ad86be5d44ce3.5452474915241328378696.png"
+dest_files=[ "res://.import/kisspng-a-bag-of-marbles-glass-game-information-spot-clipart-5ad86be5d44ce3.5452474915241328378696.png-d7f35ab1ccfe71d44215120702f0eff2.stex" ]
 
 [params]
 

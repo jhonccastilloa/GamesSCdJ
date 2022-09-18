@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/x.png-28ccae4355829722b26c05ab9035f784.stex"
+path="res://.import/board.png-94720beb133b789178a933e48d0bf7ea.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://juego2/envioronment/x.png"
-dest_files=[ "res://.import/x.png-28ccae4355829722b26c05ab9035f784.stex" ]
+source_file="res://juego2/environment/board.png"
+dest_files=[ "res://.import/board.png-94720beb133b789178a933e48d0bf7ea.stex" ]
 
 [params]
 

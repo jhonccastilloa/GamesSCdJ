@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://juego3/scenes/canica.tscn" type="PackedScene" id=1]
+[ext_resource path="res://juego3/scenes/vector_lanzar.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 224, 19 )
+
+[node name="worldG3" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 3, 699 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 214, 9 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2( 10, -29 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2( 214, 9 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 4, 142 )
+scale = Vector2( -0.0334102, 21.795 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 214, 9 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2( 451, 125 )
+scale = Vector2( -0.0334102, 21.795 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2( 214, 9 )
+shape = SubResource( 1 )
+
+[node name="canica" parent="." instance=ExtResource( 1 )]
+position = Vector2( 215, 622 )
+gravity_scale = 0.0
+
+[node name="vector_lanzar" parent="." instance=ExtResource( 2 )]
+maximum_length = 500
+
+[node name="canica2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 207, 118 )
+gravity_scale = 0.0
+
+[node name="canica3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 281, 184 )
+gravity_scale = 0.0
+
+[node name="canica4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 112, 200 )
+gravity_scale = 0.0
+
+[node name="canica5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 115, 94 )
+gravity_scale = 0.0
+
+[connection signal="vector_created" from="vector_lanzar" to="canica" method="launch"]
