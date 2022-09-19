@@ -15,8 +15,8 @@ run/main_scene="res://Menu.tscn"
 
 [display]
 
-window/size/width=436
-window/size/height=730
+window/size/width=730
+window/size/height=436
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 

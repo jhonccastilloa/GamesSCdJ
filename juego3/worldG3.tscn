@@ -12,53 +12,39 @@ extents = Vector2( 224, 19 )
 position = Vector2( 3, 699 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 214, 9 )
+position = Vector2( 749, -481 )
+rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
-position = Vector2( 10, -29 )
+position = Vector2( 85, -44 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-position = Vector2( 214, 9 )
+position = Vector2( -100, 266 )
+rotation = 1.5708
 shape = SubResource( 1 )
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2( 4, 142 )
-scale = Vector2( -0.0334102, 21.795 )
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2( -91, -121 )
+rotation = -1.56732
+scale = Vector2( 0.982664, 1.69542 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2( 214, 9 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2( -100, 266 )
+rotation = 1.5708
 shape = SubResource( 1 )
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2( 451, 125 )
-scale = Vector2( -0.0334102, 21.795 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2( 214, 9 )
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2( -585.685, 273.467 )
+rotation = 1.5708
 shape = SubResource( 1 )
-
-[node name="canica" parent="." instance=ExtResource( 1 )]
-position = Vector2( 215, 622 )
-gravity_scale = 0.0
 
 [node name="vector_lanzar" parent="." instance=ExtResource( 2 )]
+position = Vector2( 649, 218 )
 maximum_length = 500
 
-[node name="canica2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 207, 118 )
-gravity_scale = 0.0
-
-[node name="canica3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 281, 184 )
-gravity_scale = 0.0
-
-[node name="canica4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 112, 200 )
-gravity_scale = 0.0
-
-[node name="canica5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 115, 94 )
-gravity_scale = 0.0
+[node name="canica" parent="." instance=ExtResource( 1 )]
+position = Vector2( 210, 319 )
 
 [connection signal="vector_created" from="vector_lanzar" to="canica" method="launch"]
+[connection signal="sleeping_state_changed" from="canica" to="canica" method="_on_canica_sleeping_state_changed"]
