@@ -1,6 +1,6 @@
 extends Node2D
 
-var o = load("res://juego2/envioronment/o.png")
+var o = load("res://juego2/environment/o.png")
 
 func _ready():
 #	print(get_node("img-xo").texture.get_size().y)

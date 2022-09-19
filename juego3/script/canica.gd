@@ -17,13 +17,13 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-	print(mode)
+#	print(mode)
 	pass
 	
 func launch(force : Vector2):
 	self.mode=0
 	
-	apply_impulse(Vector2.ZERO,force)
+	apply_impulse(Vector2.ZERO,force*15)
 #	print(apply_impulse(Vector2.ZERO,force))
 #	get_parent().get_node("canica").mode=3
 	

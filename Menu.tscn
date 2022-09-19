@@ -30,26 +30,35 @@ custom_constants/separation = 25
 alignment = 1
 
 [node name="JUGAR" type="Button" parent="VBoxBOtones"]
-margin_top = 101.0
+margin_top = 78.0
 margin_right = 241.0
-margin_bottom = 121.0
+margin_bottom = 98.0
 custom_styles/hover = SubResource( 1 )
 text = "EL ZORRO Y LAS OVEJAS"
 script = ExtResource( 3 )
 
 [node name="JUGAR2" type="Button" parent="VBoxBOtones"]
-margin_top = 146.0
+margin_top = 123.0
 margin_right = 241.0
-margin_bottom = 166.0
+margin_bottom = 143.0
 custom_styles/hover = SubResource( 1 )
 text = "TRES EN RAYA"
 script = ExtResource( 3 )
 
-[node name="SALIR" type="Button" parent="VBoxBOtones"]
-margin_top = 191.0
+[node name="JUGAR3" type="Button" parent="VBoxBOtones"]
+margin_top = 168.0
 margin_right = 241.0
-margin_bottom = 211.0
+margin_bottom = 188.0
+custom_styles/hover = SubResource( 1 )
+text = "CANICAS"
+script = ExtResource( 3 )
+
+[node name="SALIR" type="Button" parent="VBoxBOtones"]
+margin_top = 213.0
+margin_right = 241.0
+margin_bottom = 233.0
 text = "SALIR"
 
 [connection signal="pressed" from="VBoxBOtones/JUGAR" to="." method="_on_JUGAR_pressed"]
 [connection signal="pressed" from="VBoxBOtones/JUGAR2" to="." method="_on_JUGAR2_pressed"]
+[connection signal="pressed" from="VBoxBOtones/JUGAR3" to="." method="_on_JUGAR3_pressed"]

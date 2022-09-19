@@ -21,9 +21,9 @@ func _ready():
 	pass # Replace with function body.
 	
 func _physics_process(delta):
-	if Input.is_action_pressed("left_click"):
-		get_parent().get_node("canica").global_position.x=position_start.x
-		get_parent().get_node("canica").global_position.y=position_start.y
+	pass
+#	if Input.is_action_pressed("left_click"):
+		
 #		get_parent().get_node("canica").global_position=Vector2(position_start)
 
 		
@@ -43,7 +43,10 @@ func _draw()->void:
 func _input(event)->void:
 	if not touch_down:
 		return
-	if event.is_action_released("left_click"):
+#	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
+	if event is InputEventMouseButton and !event.pressed:
+#	if event.is_action_released("left_click"):
+		print("released")
 		touch_down=false
 		emit_signal("vector_created",vector)
 		_reset()
@@ -51,16 +54,19 @@ func _input(event)->void:
 	if event is InputEventMouseMotion:
 		position_end=event.position
 		vector=-(position_end-position_start).clamped(maximum_length)
-		print(vector)
+#		print(vector)
 		update()
 
 func _on_vector_lanzar_input_event(viewport, event, shape_idx):
-	if Input.is_action_pressed("left_click"):
+	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
+#	if Input.is_action_pressed("left_click"):
 		get_parent().get_node("canica").mode=1
 		
 		touch_down=true
 		position_start=event.position
-		print(position_start)
+		get_parent().get_node("canica").global_position.x=position_start.x
+		get_parent().get_node("canica").global_position.y=position_start.y
+#		print(position_start)
 	pass # Replace with function body.
 
 

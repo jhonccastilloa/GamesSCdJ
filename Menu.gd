@@ -11,3 +11,9 @@ func _on_JUGAR_pressed():
 
 func _on_JUGAR2_pressed():
 	get_tree().change_scene("res://juego2/worldG2.tscn")
+
+
+func _on_JUGAR3_pressed():
+	get_tree().change_scene("res://juego3/worldG3.tscn")
+	
+	pass # Replace with function body.

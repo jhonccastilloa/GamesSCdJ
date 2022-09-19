@@ -9,15 +9,15 @@ var state_end_game=-2
 var board=[[-1,-1,-1],
 		   [-1,-1,-1],
 		   [-1,-1,-1]]
-
+var empate=true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print(board)
 	
 	pass # Replace with function body.
 
-func decirHola():
-	print("hola")
+#func decirHola():
+#	print("hola")
 func figure_pos(x,y):
 	print(x)
 	print(y)
@@ -72,34 +72,36 @@ func cambiar_board(x,y):
 func win_board():
 	turno+=1
 #	print("el turno es "+ str(turno))
+#	if turno !=9 or !empate:
 	for j in range(0,2):
 		for i in range(0,3):
 			if board[0][i]==j and board[1][i]==j and board[2][i]==j:
 				print("gano "+ str(current_figure) )
-				state_end_game=	current_figure			
+				state_end_game=	current_figure
+				empate=false
 				generate_scene()
 				get_node("board")._end_game()
-				break
 		for i in range(0,3):
 			if board[i][0]==j and board[i][1]==j and board[i][2]==j:
 				print("gano horizaontal "+ str(current_figure) )
-				state_end_game=	current_figure	
+				state_end_game=	current_figure
+				empate=false
 				generate_scene()
 				get_node("board")._end_game()
-				break
 		if board[0][0]==j and  board[1][1]==j and board[2][2]==j:
 			print("gano diagonal "+ str(current_figure) )
 			state_end_game=	current_figure	
 			generate_scene()
 			get_node("board")._end_game()
-			break
 		if board[0][2]==j and  board[1][1]==j and board[2][0]==j:
 			print("gano diagonal "+ str(current_figure) )
 			state_end_game=	current_figure	
 			generate_scene()
 			get_node("board")._end_game()
-			break
-	if turno == 9:
+			
+	
+
+	if turno == 9 and empate:
 		print("no hay ganador")
 		state_end_game=2
 		generate_scene()

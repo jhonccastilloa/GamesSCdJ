@@ -3,7 +3,6 @@
 [ext_resource path="res://juego2/environment/x.png" type="Texture" id=1]
 [ext_resource path="res://juego2/script/xo.gd" type="Script" id=2]
 
-
 [node name="xo" type="Node2D"]
 position = Vector2( 176, 142 )
 script = ExtResource( 2 )
