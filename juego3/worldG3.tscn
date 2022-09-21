@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://juego3/scenes/canica.tscn" type="PackedScene" id=1]
+[ext_resource path="res://juego3/scenes/vector_lanzar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://juego3/worldG3.gd" type="Script" id=3]
+[ext_resource path="res://juego3/environment/area_circulo.png" type="Texture" id=4]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 151.0
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 224, 19 )
+
+[node name="worldG3" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="area_circulo" type="Area2D" parent="."]
+position = Vector2( 179, 200 )
+
+[node name="cs_circulo" type="CollisionShape2D" parent="area_circulo"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="area_circulo"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="canica2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 146, 253 )
+
+[node name="canica3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 152, 113 )
+
+[node name="canica4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 197, 163 )
+
+[node name="canica5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 200, 222 )
+
+[node name="canica6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 171, 281 )
+
+[node name="canica7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 128, 151 )
+
+[node name="canica8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 249, 182 )
+
+[node name="canica9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 244, 251 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 3, 699 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 749, -481 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2( 85, -44 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2( -100, 266 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2( -91, -121 )
+rotation = -1.56732
+scale = Vector2( 0.982664, 1.69542 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2( -100, 266 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2( -585.685, 273.467 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="vector_lanzar" parent="." instance=ExtResource( 2 )]
+position = Vector2( 649, 218 )
+maximum_length = 500
+
+[node name="canica" parent="." instance=ExtResource( 1 )]
+position = Vector2( 646, 215 )
+
+[connection signal="body_entered" from="area_circulo" to="." method="_on_area_circulo_body_entered"]
+[connection signal="body_exited" from="area_circulo" to="." method="_on_area_circulo_body_exited"]
+[connection signal="vector_created" from="vector_lanzar" to="canica" method="launch"]
+[connection signal="sleeping_state_changed" from="canica" to="canica" method="_on_canica_sleeping_state_changed"]

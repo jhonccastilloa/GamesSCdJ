@@ -1,8 +1,7 @@
-extends Node2D
+extends Area2D
 var selected = false
-
-
 func _ready():
+#	connect("area_entered",self,"ovejaDead")
 	pass
 	
 func _process(delta):
@@ -13,11 +12,19 @@ func _process(delta):
 func followMouse():
 	position = get_global_mouse_position()
 	
-func _on_Area2D_input_event(viewport, event, shape_idx):
+func _on_oveja_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
 		if event.pressed:
 			selected = true
 		else:
 			selected = false
+#func ovejaDead():
+##	get_parent().call("ovejasMuertas")
+#	queue_free()
+#	print("oveja comidad")
 
 
+func _on_oveja_body_entered(body):
+	get_parent().ovejasMuertas()
+	queue_free()
+	pass # Replace with function body.
