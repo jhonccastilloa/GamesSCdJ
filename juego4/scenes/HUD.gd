@@ -27,8 +27,10 @@ func _ready():
 
 
 func _on_left_pressed():
+	print()
 	emit_signal("left_pressed")
 func _on_rigth_pressed():
+	print("caminar")
 	emit_signal("rigth_pressed")
 func _on_up_pressed():
 	emit_signal("up_pressed")
@@ -38,4 +40,25 @@ func _on_down_pressed():
 
 
 func _on_left_released():
+	emit_signal("left_released")
+
+	
+	pass # Replace with function body.
+
+
+func _on_rigth_released():
+	emit_signal("rigth_released")
+	
+	pass # Replace with function body.
+
+
+func _on_up_released():
+	emit_signal("up_released")
+	
+	pass # Replace with function body.
+
+
+func _on_down_released():
+	emit_signal("down_released")
+	
 	pass # Replace with function body.

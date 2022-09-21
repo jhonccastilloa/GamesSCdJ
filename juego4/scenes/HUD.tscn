@@ -30,5 +30,8 @@ normal = ExtResource( 2 )
 [connection signal="pressed" from="touch_buttons/left" to="." method="_on_left_pressed"]
 [connection signal="released" from="touch_buttons/left" to="." method="_on_left_released"]
 [connection signal="pressed" from="touch_buttons/rigth" to="." method="_on_rigth_pressed"]
+[connection signal="released" from="touch_buttons/rigth" to="." method="_on_rigth_released"]
 [connection signal="pressed" from="touch_buttons/up" to="." method="_on_up_pressed"]
+[connection signal="released" from="touch_buttons/up" to="." method="_on_up_released"]
 [connection signal="pressed" from="touch_buttons/down" to="." method="_on_down_pressed"]
+[connection signal="released" from="touch_buttons/down" to="." method="_on_down_released"]

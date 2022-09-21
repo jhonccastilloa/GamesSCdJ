@@ -13,6 +13,10 @@
 [node name="HUD" parent="." instance=ExtResource( 3 )]
 
 [connection signal="down_pressed" from="HUD" to="fondo/kite" method="_on_HUD_down_pressed"]
+[connection signal="down_released" from="HUD" to="fondo/kite" method="_on_HUD_down_released"]
 [connection signal="left_pressed" from="HUD" to="fondo/kite" method="_on_HUD_left_pressed"]
+[connection signal="left_released" from="HUD" to="fondo/kite" method="_on_HUD_left_released"]
 [connection signal="rigth_pressed" from="HUD" to="fondo/kite" method="_on_HUD_rigth_pressed"]
+[connection signal="rigth_released" from="HUD" to="fondo/kite" method="_on_HUD_rigth_released"]
 [connection signal="up_pressed" from="HUD" to="fondo/kite" method="_on_HUD_up_pressed"]
+[connection signal="up_released" from="HUD" to="fondo/kite" method="_on_HUD_up_released"]

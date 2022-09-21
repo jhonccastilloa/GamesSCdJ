@@ -41,4 +41,38 @@ func _on_HUD_up_pressed():
 	print(velocity)
 	
 func _physics_process(delta):
+	print(delta)
+	print(position)
+	if press:
+		self.position+=velocity
 	print(press)
+
+
+func _on_HUD_down_released():
+	velocity=Vector2.ZERO
+	press=false
+	pass # Replace with function body.
+
+
+func _on_HUD_left_released():
+	velocity=Vector2.ZERO
+	
+	press=false
+	
+	pass # Replace with function body.
+
+
+func _on_HUD_rigth_released():
+	velocity=Vector2.ZERO
+	
+	press=false
+	
+	pass # Replace with function body.
+
+
+func _on_HUD_up_released():
+	velocity=Vector2.ZERO
+	
+	press=false
+	
+	pass # Replace with function body.
