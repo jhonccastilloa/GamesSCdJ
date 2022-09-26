@@ -1,13 +1,11 @@
 extends RigidBody2D
 
-var count=0
-
 export var speed = 400
 var velocity = Vector2.ZERO
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var press=true
+var press=false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,52 +17,49 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
-func _on_HUD_down_pressed():
-	velocity.y += 1
-	press=false
-	print(velocity)
-	
-func _on_HUD_left_pressed():
-	velocity.x -= 1
-	press=false
-	
-	print(velocity)
-
-func _on_HUD_rigth_pressed():
-	velocity.x += 1
-	press=false
-	
-	print(velocity)
-
-func _on_HUD_up_pressed():
-	velocity.y -= 1
-	press=false
-	
-	print(velocity)
+#
+#func _on_HUD_down_pressed():
+#	velocity.y += 1
+#	press=true
+#	print(velocity)
+#func _on_HUD_left_pressed():
+#	velocity.x -= 1
+#	press=true
+#
+#	print(velocity)
+#
+#func _on_HUD_rigth_pressed():
+#	velocity.x += 1
+#	press=true
+#
+#	print(velocity)
+#
+#func _on_HUD_up_pressed():
+#	velocity.y -= 1
+#	press=true
+#
+#	print(velocity)
 	
 func _physics_process(delta):
 #	print(delta)
 #	print(position)
-	if press:
-		self.position+=velocity
+#	if press:
+#		self.position+=velocity
 #	print(press)
+	pass
 
 
 func _on_HUD_down_released():
-	count+=1
-	
 	velocity=Vector2.ZERO
-	press=true
-	print(count)
-	
+	press=false
 	pass # Replace with function body.
 
 
 func _on_HUD_left_released():
-	velocity=Vector2.ZERO
-	
-	press=true
+	velocity.x -= 0.1
+#	velocity=Vector2.ZERO
+	self.position+=velocity
+#	press=false
 	
 	pass # Replace with function body.
 
@@ -72,7 +67,7 @@ func _on_HUD_left_released():
 func _on_HUD_rigth_released():
 	velocity=Vector2.ZERO
 	
-	press=true
+	press=false
 	
 	pass # Replace with function body.
 
@@ -80,6 +75,6 @@ func _on_HUD_rigth_released():
 func _on_HUD_up_released():
 	velocity=Vector2.ZERO
 	
-	press=true
+	press=false
 	
 	pass # Replace with function body.

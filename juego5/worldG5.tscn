@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://juego5/environment/lineDark44.png" type="Texture" id=2]
+[ext_resource path="res://juego5/script/PathFollow2D.gd" type="Script" id=3]
+[ext_resource path="res://juego5/script/pf_player2.gd" type="Script" id=4]
+[ext_resource path="res://juego5/environment/niñoConLlanta (2).png" type="Texture" id=5]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 48, 152, 0, 0, 0, 0, 704, 152, 0, 0, 0, 0, 704, 120, 0, 0, 0, 0, 584, 120, 0, 0, 0, 0, 48, 120, 0, 0, 0, 0, 48, 88, 0, 0, 0, 0, 704, 88, 0, 0, 0, 0, 704, 56, 0, 0, 0, 0, 48, 56, 0, 0, 0, 0, 48, 24, 0, 0, 0, 0, 704, 24 )
+}
+
+[node name="worldG5" type="Node"]
+
+[node name="path_player1" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="pf_player1" type="PathFollow2D" parent="path_player1"]
+position = Vector2( 48, 152 )
+script = ExtResource( 3 )
+
+[node name="spr_player1" type="Sprite" parent="path_player1/pf_player1"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+flip_h = true
+
+[node name="path_player2" type="Path2D" parent="."]
+position = Vector2( 0, 168 )
+scale = Vector2( 1, 1.01563 )
+curve = SubResource( 1 )
+
+[node name="pf_player2" type="PathFollow2D" parent="path_player2"]
+position = Vector2( 48, 152 )
+rotate = false
+script = ExtResource( 4 )
+
+[node name="spr_player2" type="Sprite" parent="path_player2/pf_player2"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+flip_h = true
+
+[node name="tsb_player1" type="TouchScreenButton" parent="."]
+position = Vector2( 144, 432 )
+rotation = 3.14159
+normal = ExtResource( 2 )
+
+[node name="tsb_player2" type="TouchScreenButton" parent="."]
+position = Vector2( 672, 424 )
+rotation = 3.14159
+normal = ExtResource( 2 )
+
+[connection signal="released" from="tsb_player1" to="path_player1/pf_player1" method="_on_TouchScreenButton_released"]
+[connection signal="released" from="tsb_player2" to="path_player2/pf_player2" method="_on_tsb_player2_released"]

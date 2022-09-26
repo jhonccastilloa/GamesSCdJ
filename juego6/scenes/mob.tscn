@@ -1,0 +1,54 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://juego6/script/mob.gd" type="Script" id=1]
+[ext_resource path="res://juego6/art/32.png" type="Texture" id=2]
+[ext_resource path="res://juego6/art/34.png" type="Texture" id=3]
+[ext_resource path="res://juego6/art/35.png" type="Texture" id=4]
+[ext_resource path="res://juego6/art/33.png" type="Texture" id=5]
+[ext_resource path="res://juego6/art/1.png" type="Texture" id=6]
+[ext_resource path="res://juego6/art/8.png" type="Texture" id=7]
+[ext_resource path="res://juego6/art/2.png" type="Texture" id=8]
+[ext_resource path="res://juego6/art/5.png" type="Texture" id=9]
+[ext_resource path="res://juego6/art/6.png" type="Texture" id=10]
+[ext_resource path="res://juego6/art/7.png" type="Texture" id=11]
+[ext_resource path="res://juego6/art/4.png" type="Texture" id=12]
+[ext_resource path="res://juego6/art/3.png" type="Texture" id=13]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "ball1",
+"speed": 2.99
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "ball2",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 3.90207
+
+[node name="mob" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource( 1 )
+MIN_SPEED = 250
+MAX_SPEED = 25
+
+[node name="as_mob" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "ball1"
+playing = true
+
+[node name="cs_mob" type="CollisionShape2D" parent="."]
+position = Vector2( 1, 9.53674e-07 )
+rotation = 1.5708
+scale = Vector2( 4.10785, 4.25377 )
+shape = SubResource( 2 )
+
+[node name="vis_mob" type="VisibilityNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="vis_mob" to="." method="_on_vis_mob_screen_exited"]
