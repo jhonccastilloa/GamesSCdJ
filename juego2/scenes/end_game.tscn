@@ -3,7 +3,6 @@
 [ext_resource path="res://tipografias/Candal.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://juego2/script/end_game.gd" type="Script" id=2]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 45
 font_data = ExtResource( 1 )

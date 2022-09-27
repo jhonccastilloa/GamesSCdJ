@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://juego3/scenes/canica.tscn" type="PackedScene" id=1]
 [ext_resource path="res://juego3/scenes/vector_lanzar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://juego3/worldG3.gd" type="Script" id=3]
 [ext_resource path="res://juego3/environment/area_circulo.png" type="Texture" id=4]
+[ext_resource path="res://juego6/art/lineDark30.png" type="Texture" id=5]
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 151.0
@@ -86,7 +87,12 @@ maximum_length = 500
 [node name="canica" parent="." instance=ExtResource( 1 )]
 position = Vector2( 646, 215 )
 
+[node name="salir" type="TouchScreenButton" parent="."]
+position = Vector2( 683, 3 )
+normal = ExtResource( 5 )
+
 [connection signal="body_entered" from="area_circulo" to="." method="_on_area_circulo_body_entered"]
 [connection signal="body_exited" from="area_circulo" to="." method="_on_area_circulo_body_exited"]
 [connection signal="vector_created" from="vector_lanzar" to="canica" method="launch"]
 [connection signal="sleeping_state_changed" from="canica" to="canica" method="_on_canica_sleeping_state_changed"]
+[connection signal="pressed" from="salir" to="." method="_on_salir_pressed"]

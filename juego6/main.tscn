@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://juego6/script/main.gd" type="Script" id=1]
 [ext_resource path="res://juego6/art/lineDark21.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://juego6/scenes/HUD.tscn" type="PackedScene" id=6]
 [ext_resource path="res://juego6/art/lineDark19.png" type="Texture" id=7]
 [ext_resource path="res://juego6/art/lineDark20.png" type="Texture" id=8]
+[ext_resource path="res://juego6/art/lineDark30.png" type="Texture" id=9]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -68,6 +69,10 @@ visible = false
 position = Vector2( 96, 344 )
 normal = ExtResource( 3 )
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Controles"]
+position = Vector2( 680, 0 )
+normal = ExtResource( 9 )
+
 [connection signal="start_game" from="HUD" to="." method="new_game"]
 [connection signal="hit" from="player" to="." method="game_over"]
 [connection signal="timeout" from="mob_timer" to="." method="_on_mob_timer_timeout"]
@@ -81,3 +86,4 @@ normal = ExtResource( 3 )
 [connection signal="released" from="Controles/tbs_up" to="player" method="_on_tbs_up_released"]
 [connection signal="pressed" from="Controles/tbs_down" to="player" method="_on_tbs_down_pressed"]
 [connection signal="released" from="Controles/tbs_down" to="player" method="_on_tbs_down_released"]
+[connection signal="pressed" from="Controles/TouchScreenButton" to="." method="_on_TouchScreenButton_pressed"]

@@ -19,7 +19,7 @@ func _process(delta):
 
 
 func _on_TouchScreenButton_released():
-	velocity+=0.1
+	velocity+=1
 	self.offset += velocity
 	pass # Replace with function body.
 

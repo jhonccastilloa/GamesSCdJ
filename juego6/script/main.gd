@@ -65,3 +65,8 @@ func game_over():
 
 func _on_tbs_down_pressed():
 	pass # Replace with function body.
+
+
+func _on_TouchScreenButton_pressed():
+	get_tree().change_scene("res://Menu.tscn")
+	pass # Replace with function body.

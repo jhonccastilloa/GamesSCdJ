@@ -20,7 +20,7 @@ func _on_JUGAR3_pressed():
 
 
 func _on_JUGAR4_pressed():
-	get_tree().change_scene("res://juego4/worldG4.tscn")
+	get_tree().change_scene("res://juego5/worldG5.tscn")
 	
 	pass # Replace with function body.
 
