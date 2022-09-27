@@ -1,19 +1,43 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://juego3/scenes/canica.tscn" type="PackedScene" id=1]
 [ext_resource path="res://juego3/scenes/vector_lanzar.tscn" type="PackedScene" id=2]
-[ext_resource path="res://juego3/worldG3.gd" type="Script" id=3]
+[ext_resource path="res://juego3/script/worldG3.gd" type="Script" id=3]
 [ext_resource path="res://juego3/environment/area_circulo.png" type="Texture" id=4]
 [ext_resource path="res://juego6/art/lineDark30.png" type="Texture" id=5]
+[ext_resource path="res://juego3/environment/TIERRA.png" type="Texture" id=6]
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 151.0
+
+[sub_resource type="PhysicsMaterial" id=3]
+
+[sub_resource type="PhysicsMaterial" id=4]
+
+[sub_resource type="PhysicsMaterial" id=5]
+
+[sub_resource type="PhysicsMaterial" id=6]
+
+[sub_resource type="PhysicsMaterial" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 224, 19 )
 
 [node name="worldG3" type="Node2D"]
 script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.741675, 0.657576 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 639.0
+margin_top = 207.0
+margin_right = 679.0
+margin_bottom = 247.0
+rect_scale = Vector2( 0.517343, 0.524085 )
+mouse_filter = 2
 
 [node name="area_circulo" type="Area2D" parent="."]
 position = Vector2( 179, 200 )
@@ -25,28 +49,33 @@ shape = SubResource( 2 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 4 )
 
-[node name="canica2" parent="." instance=ExtResource( 1 )]
+[node name="canica2" parent="." groups=["canicas"] instance=ExtResource( 1 )]
 position = Vector2( 146, 253 )
+physics_material_override = SubResource( 3 )
 
-[node name="canica3" parent="." instance=ExtResource( 1 )]
+[node name="canica3" parent="." groups=["canicas"] instance=ExtResource( 1 )]
 position = Vector2( 152, 113 )
+physics_material_override = SubResource( 4 )
 
-[node name="canica4" parent="." instance=ExtResource( 1 )]
+[node name="canica4" parent="." groups=["canicas"] instance=ExtResource( 1 )]
 position = Vector2( 197, 163 )
+physics_material_override = SubResource( 5 )
 
-[node name="canica5" parent="." instance=ExtResource( 1 )]
+[node name="canica5" parent="." groups=["canicas"] instance=ExtResource( 1 )]
 position = Vector2( 200, 222 )
+physics_material_override = SubResource( 6 )
 
-[node name="canica6" parent="." instance=ExtResource( 1 )]
+[node name="canica6" parent="." groups=["canicas"] instance=ExtResource( 1 )]
 position = Vector2( 171, 281 )
+physics_material_override = SubResource( 7 )
 
-[node name="canica7" parent="." instance=ExtResource( 1 )]
+[node name="canica7" parent="." groups=["canicas"] instance=ExtResource( 1 )]
 position = Vector2( 128, 151 )
 
-[node name="canica8" parent="." instance=ExtResource( 1 )]
+[node name="canica8" parent="." groups=["canicas"] instance=ExtResource( 1 )]
 position = Vector2( 249, 182 )
 
-[node name="canica9" parent="." instance=ExtResource( 1 )]
+[node name="canica9" parent="." groups=["canicas"] instance=ExtResource( 1 )]
 position = Vector2( 244, 251 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -85,7 +114,7 @@ position = Vector2( 649, 218 )
 maximum_length = 500
 
 [node name="canica" parent="." instance=ExtResource( 1 )]
-position = Vector2( 646, 215 )
+position = Vector2( 649, 217 )
 
 [node name="salir" type="TouchScreenButton" parent="."]
 position = Vector2( 683, 3 )

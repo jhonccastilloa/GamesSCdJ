@@ -6,6 +6,7 @@
 [sub_resource type="CircleShape2D" id=1]
 
 [node name="canica" type="RigidBody2D"]
+mass = 2.73
 gravity_scale = 0.0
 script = ExtResource( 2 )
 

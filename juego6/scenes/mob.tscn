@@ -41,6 +41,7 @@ MAX_SPEED = 25
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "ball1"
+frame = 2
 playing = true
 
 [node name="cs_mob" type="CollisionShape2D" parent="."]
