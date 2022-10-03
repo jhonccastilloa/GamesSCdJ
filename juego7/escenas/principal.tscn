@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://juego7/script/principal.gd" type="Script" id=1]
 [ext_resource path="res://fondo2.jpg" type="Texture" id=2]
 [ext_resource path="res://juego7/images/transparentLight19.png" type="Texture" id=3]
+[ext_resource path="res://Minercraftory.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 45
+font_data = ExtResource( 4 )
 
 [node name="principal" type="Node2D"]
 script = ExtResource( 1 )
@@ -20,10 +25,11 @@ text = "cantidad"
 [node name="boton_jugar" type="Button" parent="."]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = 336.0
-margin_top = 189.0
-margin_right = 379.0
-margin_bottom = 209.0
+margin_left = 280.0
+margin_top = 149.0
+margin_right = 454.0
+margin_bottom = 227.0
+custom_fonts/font = SubResource( 1 )
 text = "jugar"
 
 [node name="cantidad" type="HSlider" parent="."]
