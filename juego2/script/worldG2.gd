@@ -90,12 +90,14 @@ func win_board():
 				get_node("board")._end_game()
 		if board[0][0]==j and  board[1][1]==j and board[2][2]==j:
 			print("gano diagonal "+ str(current_figure) )
-			state_end_game=	current_figure	
+			state_end_game=	current_figure
+			empate=false
 			generate_scene()
 			get_node("board")._end_game()
 		if board[0][2]==j and  board[1][1]==j and board[2][0]==j:
 			print("gano diagonal "+ str(current_figure) )
-			state_end_game=	current_figure	
+			state_end_game=	current_figure
+			empate=false
 			generate_scene()
 			get_node("board")._end_game()
 			
