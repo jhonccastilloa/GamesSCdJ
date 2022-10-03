@@ -23,3 +23,7 @@ func _on_JUGAR4_pressed():
 	get_tree().change_scene("res://juego4/worldG4.tscn")
 	
 	pass # Replace with function body.
+func _on_JUGAR7_pressed():
+	get_tree().change_scene("res://juego7/escenas/principal.tscn")
+	
+	pass # Replace with function body.
