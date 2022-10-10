@@ -21,10 +21,13 @@ func _ready():
 #	pass
 
 func _end_game():
-	print("hola")
 	var hijos= get_children()
 	for i in range (1,len(hijos)) :
 		hijos[i].input_pickable=0
+func _restart_game():
+	var hijos= get_children()
+	for i in range (1,len(hijos)) :
+		hijos[i].input_pickable=1
 func _on_00_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
 		print("se clickeo")

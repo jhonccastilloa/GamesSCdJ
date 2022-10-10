@@ -19,3 +19,8 @@ func _ready():
 func _on_JUGAR_pressed():
 	get_tree().change_scene("res://Menu.tscn")
 	pass # Replace with function body.
+
+
+func _on_btn_salir_pressed():
+	get_tree().quit()
+	pass # Replace with function body.

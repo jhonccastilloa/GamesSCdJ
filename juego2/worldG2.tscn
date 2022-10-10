@@ -1,18 +1,90 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://juego2/scenes/board.tscn" type="PackedScene" id=1]
 [ext_resource path="res://juego2/script/worldG2.gd" type="Script" id=2]
+[ext_resource path="res://tipografias/Candal.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 3 )
 
 [node name="worldG2" type="Node2D"]
 script = ExtResource( 2 )
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 729.0
+margin_bottom = 430.0
+mouse_filter = 2
+
 [node name="board" parent="." instance=ExtResource( 1 )]
+position = Vector2( -32, -16 )
 
 [node name="SALIR" type="Button" parent="."]
-margin_left = 4.0
-margin_top = 126.0
-margin_right = 81.0
-margin_bottom = 162.0
+margin_right = 77.0
+margin_bottom = 36.0
 text = "SALIR"
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="lbl_player1" type="Label" parent="Node2D"]
+margin_left = 8.0
+margin_top = 128.0
+margin_right = 192.0
+margin_bottom = 162.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "JUGADOR 1(X)"
+
+[node name="lbl_score1" type="Label" parent="Node2D"]
+margin_left = 88.0
+margin_top = 184.0
+margin_right = 128.0
+margin_bottom = 224.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "0"
+
+[node name="lbl_player2" type="Label" parent="Node2D"]
+margin_left = 544.0
+margin_top = 128.0
+margin_right = 727.0
+margin_bottom = 162.0
+custom_colors/font_color = Color( 0.435294, 0.403922, 0.403922, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "JUGADOR 2(O)"
+
+[node name="lbl_score2" type="Label" parent="Node2D"]
+margin_left = 624.0
+margin_top = 184.0
+margin_right = 664.0
+margin_bottom = 224.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "0"
+
+[node name="lbl_empate" type="Label" parent="Node2D"]
+margin_left = 320.0
+margin_top = 360.0
+margin_right = 419.0
+margin_bottom = 393.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "EMPATE"
+
+[node name="lbl_score3" type="Label" parent="Node2D"]
+margin_left = 360.0
+margin_top = 392.0
+margin_right = 382.0
+margin_bottom = 432.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "0"
 
 [connection signal="pressed" from="SALIR" to="." method="_on_SALIR_pressed"]

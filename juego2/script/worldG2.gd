@@ -24,31 +24,31 @@ func figure_pos(x,y):
 	
 	if x == 0 and y == 0 :
 		print("selecionado")
-		generate_figure(260,60)
+		generate_figure(250,55)
 	elif x == 0 and y == 1 :
 		print("selecionado 2")
-		generate_figure(260,190)
+		generate_figure(250,185)
 	elif x == 0 and y == 2 :
 		print("selecionado 3")
-		generate_figure(260,310)
+		generate_figure(250,305)
 	elif x == 1 and y == 0 :
 		print("selecionado 4")
-		generate_figure(390,60)
+		generate_figure(370,55)
 	elif x == 1 and y == 1 :
 		print("selecionado 5")
-		generate_figure(390,190)
+		generate_figure(370,185)
 	elif x == 1 and y == 2 :
 		print("selecionado 6")
-		generate_figure(390,310)
+		generate_figure(370,305)
 	elif x == 2 and y == 0 :
 		print("selecionado 7")
-		generate_figure(520,60)		
+		generate_figure(495,55)		
 	elif x == 2 and y == 1 :
 		print("selecionado 8")
-		generate_figure(520,190)
+		generate_figure(495,185)
 	elif x == 2 and y == 2 :
 		print("selecionado 9")
-		generate_figure(520,310)
+		generate_figure(495,305)
 	cambiar_figura()
 	cambiar_board(y,x)
 
@@ -62,8 +62,12 @@ func generate_figure(x,y):
 func cambiar_figura():
 	print(current_figure)
 	if current_figure==0:
+		get_node("Node2D/lbl_player1").add_color_override("font_color", Color(0.4, 0.4, 0.4,1))
+		get_node("Node2D/lbl_player2").add_color_override("font_color", Color(0,0,1,1))
 		current_figure=1
 	elif current_figure==1:
+		get_node("Node2D/lbl_player1").add_color_override("font_color", Color(1,0,0,1))
+		get_node("Node2D/lbl_player2").add_color_override("font_color", Color(0.4, 0.4, 0.4,1))
 		current_figure=0
 func cambiar_board(x,y):
 	board[x][y]=current_figure
@@ -77,15 +81,19 @@ func win_board():
 		for i in range(0,3):
 			if board[0][i]==j and board[1][i]==j and board[2][i]==j:
 				print("gano "+ str(current_figure) )
+#				$Node2D/lbl_score1.text=str(int($Node2D/lbl_score1.text)+1)
 				state_end_game=	current_figure
 				empate=false
 				generate_scene()
+				
 				get_node("board")._end_game()
 		for i in range(0,3):
 			if board[i][0]==j and board[i][1]==j and board[i][2]==j:
 				print("gano horizaontal "+ str(current_figure) )
 				state_end_game=	current_figure
 				empate=false
+#				print($Node2D/lbl_score1.text)
+				
 				generate_scene()
 				get_node("board")._end_game()
 		if board[0][0]==j and  board[1][1]==j and board[2][2]==j:
