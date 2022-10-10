@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fondo2.jpg-402cd0ded889a7b0b4979f12fbf8472d.stex"
+path="res://.import/pause.png-d497048eb98995ab9a2a1bb8927ffe58.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://juego1/environment/fondo2.jpg"
-dest_files=[ "res://.import/fondo2.jpg-402cd0ded889a7b0b4979f12fbf8472d.stex" ]
+source_file="res://assets/pause.png"
+dest_files=[ "res://.import/pause.png-d497048eb98995ab9a2a1bb8927ffe58.stex" ]
 
 [params]
 

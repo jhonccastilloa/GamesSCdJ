@@ -2,7 +2,8 @@ extends Node2D
 
 var figure = load("res://juego2/scenes/xo.tscn")
 var scene = load("res://juego2/scenes/end_game.tscn")
-
+var scene_pause = load("res://menu_pause.tscn")
+var pause=false
 var turno=0
 var current_figure=0
 var state_end_game=-2
@@ -126,3 +127,16 @@ func generate_scene():
 
 func _on_SALIR_pressed():
 	get_tree().change_scene("res://Menu.tscn")
+
+
+func _on_btn_pause_pressed():
+	if !pause:
+		var scn_pause=scene_pause.instance()
+		$"Screen".add_child(scn_pause)
+		scn_pause.connect("restart",self,"on_restart")
+		get_tree().paused=1
+	pass # Replace with function body.
+
+func on_restart():
+	get_tree().paused=0
+	get_tree().change_scene("res://juego2/worldG2.tscn")
