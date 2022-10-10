@@ -1,6 +1,6 @@
 extends Node2D
 
-var ovejaEli = 6
+var ovejaEli = 0
 var num_win=0
 var scene_pause = load("res://menu_pause.tscn")
 var pause=false
@@ -8,9 +8,9 @@ func _ready():
 	pass
 
 func ovejasMuertas():
-	ovejaEli-=1
+	ovejaEli+=1
 	get_node("InterfazDeUsuario/VBoxContainer/ovejasComidas").text="0"+str(ovejaEli)
-	if(ovejaEli==0):
+	if(ovejaEli==6):
 		get_tree().change_scene("res://juego1/ganoZorro.tscn")
 	
 	print(ovejaEli)
