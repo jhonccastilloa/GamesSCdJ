@@ -78,5 +78,7 @@ texture_pressed = ExtResource( 8 )
 
 [node name="Screen" type="CanvasLayer" parent="."]
 
+[node name="Screen_win" type="CanvasLayer" parent="."]
+
 [connection signal="area_entered" from="LineaGanar" to="." method="_on_LineaGanar_area_entered"]
 [connection signal="pressed" from="btn_pause" to="." method="_on_btn_pause_pressed"]
