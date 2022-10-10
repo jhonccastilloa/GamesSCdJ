@@ -7,7 +7,8 @@ onready var tiempo= $tiempo
 
 var carta_al_descubierto = null
 var _cartas = []
-
+var scene_pause = load("res://menu_pause.tscn")
+var pause=false
 var cantidad_actual = 0
 
 func _ready():
@@ -167,4 +168,12 @@ func _on_cantidad_value_changed(value):
 
 
 func _on_TextureButton_pressed():
-	get_tree().change_scene("res://Menu.tscn")
+	if !pause:
+		var scn_pause=scene_pause.instance()
+		$"Screen".add_child(scn_pause)
+		scn_pause.connect("restart",self,"on_restart")
+		get_tree().paused=1
+		
+func on_restart():
+	get_tree().paused=0
+	get_tree().change_scene("res://juego7/escenas/principal.tscn")

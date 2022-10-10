@@ -16,36 +16,36 @@ func _ready():
 #	pass
 
 
-func _on_JUGAR_pressed():
+
+
+
+func _on_juego1_pressed():
 	get_tree().change_scene("res://juego1/world.tscn")
-	pass # Replace with function body.
 
 
-func _on_JUGAR2_pressed():
+func _on_juego2_pressed():
 	get_tree().change_scene("res://juego2/worldG2.tscn")
-	pass # Replace with function body.
+	
 
-
-func _on_JUGAR3_pressed():
+func _on_juego3_pressed():
 	get_tree().change_scene("res://juego3/worldG3.tscn")
-	pass # Replace with function body.
 
 
-func _on_JUGAR4_pressed():
+func _on_juego4_pressed():
 	get_tree().change_scene("res://juego5/worldG5.tscn")
-	pass # Replace with function body.
 
 
-func _on_JUGAR5_pressed():
+func _on_juego5_pressed():
 	get_tree().change_scene("res://juego6/main.tscn")
-	pass # Replace with function body.
 
 
-func _on_JUGAR6_pressed():
+func _on_juego6_pressed():
 	get_tree().change_scene("res://juego7/escenas/principal.tscn")
-	pass # Replace with function body.
 
 
-func _on_SALIR_pressed():
+
+
+
+func _on_salir_pressed():
 	get_tree().change_scene("res://MenuPrincipal.tscn")
 	pass # Replace with function body.

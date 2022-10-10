@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://juego7/script/principal.gd" type="Script" id=1]
-[ext_resource path="res://fondo2.jpg" type="Texture" id=2]
-[ext_resource path="res://juego7/images/transparentLight19.png" type="Texture" id=3]
+[ext_resource path="res://assets/pause_black.png" type="Texture" id=2]
+[ext_resource path="res://fondo2.jpg" type="Texture" id=3]
+[ext_resource path="res://assets/pause.png" type="Texture" id=4]
 
 [node name="principal" type="Node2D"]
 script = ExtResource( 1 )
@@ -46,14 +47,18 @@ value = 4.0
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 2
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="TextureButton" type="TextureButton" parent="."]
-margin_left = 671.0
-margin_top = 8.0
-margin_right = 719.0
-margin_bottom = 56.0
-texture_normal = ExtResource( 3 )
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 680.0
+margin_right = 730.0
+margin_bottom = 50.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 2 )
+
+[node name="Screen" type="CanvasLayer" parent="."]
 
 [connection signal="pressed" from="boton_jugar" to="." method="_on_boton_jugar_pressed"]
 [connection signal="value_changed" from="cantidad" to="." method="_on_cantidad_value_changed"]

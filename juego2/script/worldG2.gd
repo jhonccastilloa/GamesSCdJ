@@ -135,7 +135,6 @@ func _on_btn_pause_pressed():
 		$"Screen".add_child(scn_pause)
 		scn_pause.connect("restart",self,"on_restart")
 		get_tree().paused=1
-	pass # Replace with function body.
 
 func on_restart():
 	get_tree().paused=0

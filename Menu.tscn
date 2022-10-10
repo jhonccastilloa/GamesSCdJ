@@ -1,91 +1,193 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://MENU/FONDO PARA MINIJUEGOS/MINIJUEGOS.png" type="Texture" id=1]
 [ext_resource path="res://MenuGames.gd" type="Script" id=2]
-[ext_resource path="res://JUGAR.gd" type="Script" id=3]
+[ext_resource path="res://assets/Button_style.tres" type="StyleBox" id=3]
+[ext_resource path="res://assets/miniaturas/juego4.png" type="Texture" id=4]
+[ext_resource path="res://assets/miniaturas/juego1.png" type="Texture" id=5]
+[ext_resource path="res://assets/miniaturas/juego6.png" type="Texture" id=6]
+[ext_resource path="res://assets/miniaturas/juego5.png" type="Texture" id=7]
+[ext_resource path="res://assets/miniaturas/juego2.png" type="Texture" id=8]
+[ext_resource path="res://assets/miniaturas/juego3.png" type="Texture" id=9]
+[ext_resource path="res://assets/button_press.tres" type="StyleBox" id=10]
+[ext_resource path="res://tipografias/Candal.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://tipografias/FuenteMenu.tres" type="DynamicFont" id=12]
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.854902, 0.168627, 0.168627, 1 )
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 11 )
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="tr_fondo" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 1 )
+
+[node name="row3" type="HBoxContainer" parent="."]
+margin_left = 42.0
+margin_top = 251.0
+margin_right = 713.0
+margin_bottom = 266.0
+custom_constants/separation = 65
+
+[node name="juego1" type="Label" parent="row3"]
+margin_right = 140.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 12 )
+text = "EL ZORRO Y LAS OVEJAS"
+
+[node name="juego2" type="Label" parent="row3"]
+margin_left = 205.0
+margin_right = 288.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 12 )
+text = "TRES EN RAYA"
+
+[node name="juego3" type="Label" parent="row3"]
+margin_left = 353.0
+margin_right = 441.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 12 )
+text = "         CANICAS"
+
+[node name="juego4" type="Label" parent="row3"]
+margin_left = 506.0
+margin_right = 649.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 12 )
+text = "  JUEGO DE LAS LLANTAS"
+
+[node name="row4" type="HBoxContainer" parent="."]
+margin_left = 42.0
+margin_top = 389.0
+margin_right = 576.0
+margin_bottom = 404.0
+custom_constants/separation = 55
+
+[node name="juego1" type="Label" parent="row4"]
+margin_right = 130.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 12 )
+text = "ESQUIVA LAS PELOTAS"
+
+[node name="juego2" type="Label" parent="row4"]
+margin_left = 185.0
+margin_right = 301.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 12 )
+text = "JUEGO DE MEMORIA"
+
+[node name="juego3" type="Label" parent="row4"]
+margin_left = 356.0
+margin_right = 429.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 12 )
+text = "         TRIVIA"
 
 [node name="VBoxBOtones" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -99.0
-margin_top = -98.0
-margin_right = 142.0
-margin_bottom = 214.0
-custom_constants/separation = 25
+margin_left = -337.0
+margin_top = -101.0
+margin_right = 343.0
+margin_bottom = 179.0
+custom_constants/separation = 40
 alignment = 1
 
-[node name="JUGAR" type="Button" parent="VBoxBOtones"]
-margin_top = 11.0
-margin_right = 241.0
-margin_bottom = 31.0
-custom_styles/hover = SubResource( 1 )
-text = "EL ZORRO Y LAS OVEJAS"
-script = ExtResource( 3 )
+[node name="row_1" type="HBoxContainer" parent="VBoxBOtones"]
+margin_top = 20.0
+margin_right = 680.0
+margin_bottom = 120.0
+custom_constants/separation = 10
 
-[node name="JUGAR2" type="Button" parent="VBoxBOtones"]
-margin_top = 56.0
-margin_right = 241.0
-margin_bottom = 76.0
-custom_styles/hover = SubResource( 1 )
-text = "TRES EN RAYA"
-script = ExtResource( 3 )
+[node name="juego1" type="Button" parent="VBoxBOtones/row_1"]
+margin_right = 162.0
+margin_bottom = 100.0
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/normal = ExtResource( 3 )
+icon = ExtResource( 5 )
+icon_align = 1
 
-[node name="JUGAR3" type="Button" parent="VBoxBOtones"]
-margin_top = 101.0
-margin_right = 241.0
-margin_bottom = 121.0
-custom_styles/hover = SubResource( 1 )
-text = "CANICAS"
-script = ExtResource( 3 )
+[node name="juego2" type="Button" parent="VBoxBOtones/row_1"]
+margin_left = 172.0
+margin_right = 334.0
+margin_bottom = 100.0
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/normal = ExtResource( 3 )
+icon = ExtResource( 8 )
+icon_align = 1
 
-[node name="JUGAR4" type="Button" parent="VBoxBOtones"]
-margin_top = 146.0
-margin_right = 241.0
-margin_bottom = 166.0
-custom_styles/hover = SubResource( 1 )
-text = "JUEGO DE LA LLANTA"
-script = ExtResource( 3 )
+[node name="juego3" type="Button" parent="VBoxBOtones/row_1"]
+margin_left = 344.0
+margin_right = 506.0
+margin_bottom = 100.0
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/normal = ExtResource( 3 )
+icon = ExtResource( 9 )
+icon_align = 1
 
-[node name="JUGAR5" type="Button" parent="VBoxBOtones"]
-margin_top = 191.0
-margin_right = 241.0
-margin_bottom = 211.0
-custom_styles/hover = SubResource( 1 )
-text = "ESQUIVA EL BALÓN"
-script = ExtResource( 3 )
+[node name="juego4" type="Button" parent="VBoxBOtones/row_1"]
+margin_left = 516.0
+margin_right = 678.0
+margin_bottom = 100.0
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/normal = ExtResource( 3 )
+icon = ExtResource( 4 )
+icon_align = 1
 
-[node name="JUGAR6" type="Button" parent="VBoxBOtones"]
-margin_top = 236.0
-margin_right = 241.0
-margin_bottom = 256.0
-custom_styles/hover = SubResource( 1 )
-text = "jUEGO DE MEMORIA"
+[node name="row_2" type="HBoxContainer" parent="VBoxBOtones"]
+margin_top = 160.0
+margin_right = 680.0
+margin_bottom = 260.0
+custom_constants/separation = 10
 
-[node name="SALIR" type="Button" parent="VBoxBOtones"]
-margin_top = 281.0
-margin_right = 241.0
-margin_bottom = 301.0
+[node name="juego5" type="Button" parent="VBoxBOtones/row_2"]
+margin_right = 162.0
+margin_bottom = 100.0
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/normal = ExtResource( 3 )
+icon = ExtResource( 7 )
+icon_align = 1
+
+[node name="juego6" type="Button" parent="VBoxBOtones/row_2"]
+margin_left = 172.0
+margin_right = 334.0
+margin_bottom = 100.0
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/normal = ExtResource( 3 )
+icon = ExtResource( 6 )
+icon_align = 1
+
+[node name="juego7" type="Button" parent="VBoxBOtones/row_2"]
+margin_left = 344.0
+margin_right = 506.0
+margin_bottom = 100.0
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/normal = ExtResource( 3 )
+icon = ExtResource( 4 )
+icon_align = 1
+
+[node name="salir" type="Button" parent="VBoxBOtones/row_2"]
+margin_left = 516.0
+margin_right = 677.0
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 1 )
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/normal = ExtResource( 3 )
 text = "SALIR"
+icon_align = 1
 
-[connection signal="pressed" from="VBoxBOtones/JUGAR" to="." method="_on_JUGAR_pressed"]
-[connection signal="pressed" from="VBoxBOtones/JUGAR2" to="." method="_on_JUGAR2_pressed"]
-[connection signal="pressed" from="VBoxBOtones/JUGAR3" to="." method="_on_JUGAR3_pressed"]
-[connection signal="pressed" from="VBoxBOtones/JUGAR4" to="." method="_on_JUGAR4_pressed"]
-[connection signal="pressed" from="VBoxBOtones/JUGAR5" to="." method="_on_JUGAR5_pressed"]
-[connection signal="pressed" from="VBoxBOtones/JUGAR6" to="." method="_on_JUGAR6_pressed"]
-[connection signal="pressed" from="VBoxBOtones/SALIR" to="." method="_on_SALIR_pressed"]
+[connection signal="pressed" from="VBoxBOtones/row_1/juego1" to="." method="_on_juego1_pressed"]
+[connection signal="pressed" from="VBoxBOtones/row_1/juego2" to="." method="_on_juego2_pressed"]
+[connection signal="pressed" from="VBoxBOtones/row_1/juego3" to="." method="_on_juego3_pressed"]
+[connection signal="pressed" from="VBoxBOtones/row_1/juego4" to="." method="_on_juego4_pressed"]
+[connection signal="pressed" from="VBoxBOtones/row_2/juego5" to="." method="_on_juego5_pressed"]
+[connection signal="pressed" from="VBoxBOtones/row_2/juego6" to="." method="_on_juego6_pressed"]
+[connection signal="pressed" from="VBoxBOtones/row_2/juego7" to="." method="_on_juego6_pressed"]
+[connection signal="pressed" from="VBoxBOtones/row_2/salir" to="." method="_on_salir_pressed"]

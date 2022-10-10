@@ -5,7 +5,7 @@
 [ext_resource path="res://juego5/script/PathFollow2D.gd" type="Script" id=3]
 [ext_resource path="res://juego5/script/pf_player2.gd" type="Script" id=4]
 [ext_resource path="res://juego5/environment/niñoConLlanta (2).png" type="Texture" id=5]
-[ext_resource path="res://juego6/art/lineDark30.png" type="Texture" id=6]
+[ext_resource path="res://assets/pause_black.png" type="Texture" id=6]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -74,9 +74,6 @@ position = Vector2( 672, 424 )
 rotation = 3.14159
 normal = ExtResource( 2 )
 
-[node name="salir" type="TouchScreenButton" parent="."]
-normal = ExtResource( 6 )
-
 [node name="a_win_player2" type="Area2D" parent="."]
 position = Vector2( 296, 32 )
 
@@ -91,8 +88,16 @@ position = Vector2( 296, -136 )
 position = Vector2( 408, 160 )
 shape = SubResource( 3 )
 
+[node name="btn_pause" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+icon = ExtResource( 6 )
+flat = true
+
+[node name="Screen" type="CanvasLayer" parent="."]
+
 [connection signal="released" from="tsb_player1" to="path_player1/pf_player1" method="_on_TouchScreenButton_released"]
 [connection signal="released" from="tsb_player2" to="path_player2/pf_player2" method="_on_tsb_player2_released"]
-[connection signal="pressed" from="salir" to="." method="_on_salir_pressed"]
 [connection signal="area_entered" from="a_win_player2" to="." method="_on_a_win_player2_area_entered"]
 [connection signal="area_entered" from="a_win_player1" to="." method="_on_a_win_player1_area_entered"]
+[connection signal="pressed" from="btn_pause" to="." method="_on_btn_pause_pressed"]

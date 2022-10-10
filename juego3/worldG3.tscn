@@ -4,8 +4,8 @@
 [ext_resource path="res://juego3/scenes/vector_lanzar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://juego3/script/worldG3.gd" type="Script" id=3]
 [ext_resource path="res://juego3/environment/area_circulo.png" type="Texture" id=4]
-[ext_resource path="res://juego6/art/lineDark30.png" type="Texture" id=5]
 [ext_resource path="res://juego3/environment/TIERRA.png" type="Texture" id=6]
+[ext_resource path="res://assets/pause.png" type="Texture" id=7]
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 151.0
@@ -38,6 +38,7 @@ margin_right = 679.0
 margin_bottom = 247.0
 rect_scale = Vector2( 0.517343, 0.524085 )
 mouse_filter = 2
+color = Color( 0.501961, 0.219608, 0.219608, 1 )
 
 [node name="area_circulo" type="Area2D" parent="."]
 position = Vector2( 179, 200 )
@@ -116,12 +117,19 @@ maximum_length = 500
 [node name="canica" parent="." instance=ExtResource( 1 )]
 position = Vector2( 649, 217 )
 
-[node name="salir" type="TouchScreenButton" parent="."]
-position = Vector2( 683, 3 )
-normal = ExtResource( 5 )
+[node name="btn_pause" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 664.0
+margin_right = 726.0
+margin_bottom = 56.0
+icon = ExtResource( 7 )
+flat = true
+
+[node name="Screen" type="CanvasLayer" parent="."]
 
 [connection signal="body_entered" from="area_circulo" to="." method="_on_area_circulo_body_entered"]
 [connection signal="body_exited" from="area_circulo" to="." method="_on_area_circulo_body_exited"]
 [connection signal="vector_created" from="vector_lanzar" to="canica" method="launch"]
 [connection signal="sleeping_state_changed" from="canica" to="canica" method="_on_canica_sleeping_state_changed"]
-[connection signal="pressed" from="salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="btn_pause" to="." method="_on_btn_pause_pressed"]

@@ -1,20 +1,13 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var scene_pause = load("res://menu_pause.tscn")
+var pause=false
 var hud = load("res://juego3/scenes/HUD.tscn")
 var canicas=0
 var moving=false
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 
 func _process(delta):
@@ -59,3 +52,13 @@ func _win():
 func _create_hud():
 	var hud_instance= hud.instance()
 	add_child(hud_instance)
+
+func _on_btn_pause_pressed():
+	if !pause:
+		var scn_pause=scene_pause.instance()
+		$"Screen".add_child(scn_pause)
+		scn_pause.connect("restart",self,"on_restart")
+		get_tree().paused=1
+func on_restart():
+	get_tree().paused=0
+	get_tree().change_scene("res://juego3/worldG3.tscn")

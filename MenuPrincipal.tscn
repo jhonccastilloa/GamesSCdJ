@@ -1,12 +1,23 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://tipografias/FuenteMenu.tres" type="DynamicFont" id=1]
 [ext_resource path="res://MenuPrincipal.gd" type="Script" id=2]
-[ext_resource path="res://JUGAR.gd" type="Script" id=3]
+[ext_resource path="res://tipografias/Kenney Pixel.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://MENU/MENU 2.0.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=3]
+size = 62
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.854902, 0.168627, 0.168627, 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 62
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -32,22 +43,21 @@ custom_constants/separation = 25
 alignment = 1
 
 [node name="JUGAR" type="Button" parent="VBoxBOtones"]
-margin_top = 91.0
-margin_right = 119.0
+margin_top = 90.0
+margin_right = 120.0
 margin_bottom = 143.0
 custom_colors/font_color_pressed = Color( 0.0784314, 1, 0, 1 )
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = SubResource( 3 )
 custom_styles/hover = SubResource( 1 )
 text = "JUGAR"
 flat = true
-script = ExtResource( 3 )
 
 [node name="btn_salir" type="Button" parent="VBoxBOtones"]
 margin_top = 168.0
-margin_right = 119.0
-margin_bottom = 220.0
+margin_right = 120.0
+margin_bottom = 221.0
 custom_colors/font_color_pressed = Color( 0.0431373, 1, 0, 1 )
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = SubResource( 4 )
 text = "SALIR"
 flat = true
 

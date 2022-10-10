@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/zorro.png-b3c838c308dbe657a1743339ffad960d.stex"
+path="res://.import/juego6.png-41d719a91d62dc43e5b56ecc960291d1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://juego1/zorro/zorro.png"
-dest_files=[ "res://.import/zorro.png-b3c838c308dbe657a1743339ffad960d.stex" ]
+source_file="res://assets/miniaturas/juego6.png"
+dest_files=[ "res://.import/juego6.png-41d719a91d62dc43e5b56ecc960291d1.stex" ]
 
 [params]
 

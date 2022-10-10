@@ -3,17 +3,11 @@ extends Node2D
 export(PackedScene) var Mob
 
 var score
+var scene_pause = load("res://menu_pause.tscn")
+var pause=false
 func _ready():
 	randomize()
-#	new_game()
-	
 	pass
-
-
-
-	
-#	pass # Replace with function body.
-#func _process(delta):
 #	print($start_timer.)
 func new_game():
 	score = 0;
@@ -68,5 +62,12 @@ func _on_tbs_down_pressed():
 
 
 func _on_TouchScreenButton_pressed():
-	get_tree().change_scene("res://Menu.tscn")
-	pass # Replace with function body.
+	if !pause:
+		var scn_pause=scene_pause.instance()
+		$"Screen".add_child(scn_pause)
+		scn_pause.connect("restart",self,"on_restart")
+		get_tree().paused=1
+		
+func on_restart():
+	get_tree().paused=0
+	get_tree().change_scene("res://juego6/main.tscn")
