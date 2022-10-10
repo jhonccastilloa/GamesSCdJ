@@ -20,6 +20,7 @@ script = ExtResource( 2 )
 margin_right = 729.0
 margin_bottom = 430.0
 mouse_filter = 2
+color = Color( 0.788235, 0.768627, 0.796078, 1 )
 
 [node name="btn_pause" type="Button" parent="."]
 anchor_left = 1.0
@@ -93,5 +94,7 @@ custom_fonts/font = SubResource( 2 )
 text = "0"
 
 [node name="Screen" type="CanvasLayer" parent="."]
+
+[node name="Screen_end" type="CanvasLayer" parent="."]
 
 [connection signal="pressed" from="btn_pause" to="." method="_on_btn_pause_pressed"]

@@ -42,6 +42,7 @@ color = Color( 0.501961, 0.219608, 0.219608, 1 )
 
 [node name="area_circulo" type="Area2D" parent="."]
 position = Vector2( 179, 200 )
+gravity = 4096.0
 
 [node name="cs_circulo" type="CollisionShape2D" parent="area_circulo"]
 shape = SubResource( 2 )

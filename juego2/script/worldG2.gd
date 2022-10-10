@@ -122,7 +122,7 @@ func win_board():
 		
 func generate_scene():
 	var scn_instance = scene.instance()
-	add_child(scn_instance)
+	$"Screen_end".add_child(scn_instance)
 
 
 func _on_SALIR_pressed():
