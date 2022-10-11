@@ -20,7 +20,7 @@ func _ready():
 
 
 func _on_juego1_pressed():
-	get_tree().change_scene("res://juego1/world.tscn")
+	get_tree().change_scene("res://juego1/animaczorro.tscn")
 
 
 func _on_juego2_pressed():
@@ -49,3 +49,7 @@ func _on_juego6_pressed():
 func _on_salir_pressed():
 	get_tree().change_scene("res://MenuPrincipal.tscn")
 	pass # Replace with function body.
+
+
+func _on_juego7_pressed():
+	get_tree().change_scene("res://juego8/escenas/animacion.tscn")
