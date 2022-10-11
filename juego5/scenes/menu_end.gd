@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 
 # Declare member variables here. Examples:
@@ -16,9 +16,9 @@ func _ready():
 #	pass
 
 
-func _on_Button_pressed():
+func _on_btn_restart_pressed():
 	get_tree().paused=false
-	get_tree().change_scene("res://juego3/worldG3.tscn")
+	get_tree().change_scene("res://juego5/worldG5.tscn")
 	pass # Replace with function body.
 
 

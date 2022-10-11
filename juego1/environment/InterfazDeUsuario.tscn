@@ -20,33 +20,34 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -362.0
-margin_top = 130.0
-margin_right = -168.0
-margin_bottom = 216.0
+margin_left = -368.0
+margin_top = 60.0
+margin_right = -91.0
+margin_bottom = 179.0
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_right = 194.0
-margin_bottom = 86.0
+margin_right = 277.0
+margin_bottom = 119.0
 
 [node name="lbl_titulo" type="Label" parent="VBoxContainer"]
-margin_right = 194.0
+margin_right = 277.0
 margin_bottom = 29.0
 custom_fonts/font = SubResource( 2 )
 text = "Ovejas Comidas"
+align = 1
 
 [node name="ovejasComidas" type="Label" parent="VBoxContainer"]
 margin_top = 33.0
-margin_right = 194.0
+margin_right = 277.0
 margin_bottom = 86.0
 custom_fonts/font = SubResource( 1 )
 text = "00"
 align = 1
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 214, 16 )
+position = Vector2( 221, 19 )
 scale = Vector2( 0.08, 0.08 )
 texture = ExtResource( 1 )

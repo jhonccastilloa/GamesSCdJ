@@ -24,7 +24,7 @@ func _process(delta):
 func launch(force : Vector2):
 	self.mode=0
 	
-	apply_impulse(Vector2.ZERO,force*15)
+	apply_impulse(Vector2.ZERO,force*43)
 #	print(apply_impulse(Vector2.ZERO,force))
 #	get_parent().get_node("canica").mode=3
 	

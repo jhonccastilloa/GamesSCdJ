@@ -1,41 +1,70 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://juego6/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://juego3/scenes/HUD.gd" type="Script" id=2]
-
-[sub_resource type="DynamicFont" id=1]
-size = 25
-font_data = ExtResource( 1 )
+[ext_resource path="res://assets/return.png" type="Texture" id=3]
+[ext_resource path="res://assets/exitLeft.png" type="Texture" id=4]
+[ext_resource path="res://tipografias/Candal.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="DynamicFont" id=2]
 size = 23
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=1]
+size = 32
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 2 )
 
-[node name="Label" type="Label" parent="."]
+[node name="ctrl_endgame" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="ctrl_endgame"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.607843 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ctrl_endgame"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -212.0
-margin_top = -15.5
-margin_right = 212.0
-margin_bottom = 15.5
+margin_left = -250.0
+margin_top = -97.0
+margin_right = 250.0
+margin_bottom = 97.0
+rect_scale = Vector2( 1, 0.994686 )
+custom_constants/separation = 20
+alignment = 1
+
+[node name="btn_restart" type="Button" parent="ctrl_endgame/VBoxContainer"]
+pause_mode = 2
+margin_right = 500.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 2 )
+icon = ExtResource( 3 )
+flat = true
+icon_align = 1
+
+[node name="lbl_text" type="Label" parent="ctrl_endgame/VBoxContainer"]
+margin_top = 76.0
+margin_right = 500.0
+margin_bottom = 118.0
 custom_fonts/font = SubResource( 1 )
 text = "SALIERON TODAS LA CANICAS"
 
-[node name="Button" type="Button" parent="."]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -65.0
-margin_top = -122.0
-margin_right = 75.0
-margin_bottom = -87.0
-custom_fonts/font = SubResource( 2 )
-text = "REINICIAR"
+[node name="btn_exit" type="Button" parent="ctrl_endgame/VBoxContainer"]
+pause_mode = 2
+margin_top = 138.0
+margin_right = 500.0
+margin_bottom = 194.0
+icon = ExtResource( 4 )
+flat = true
+icon_align = 1
 
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="ctrl_endgame/VBoxContainer/btn_restart" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="ctrl_endgame/VBoxContainer/btn_exit" to="." method="_on_btn_exit_pressed"]

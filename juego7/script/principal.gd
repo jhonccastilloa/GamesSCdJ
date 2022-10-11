@@ -161,6 +161,7 @@ func _on_boton_jugar_pressed():
 	$boton_jugar.visible = false
 	$cantidad.visible=false
 	$label.visible= false
+	$label2.visible= false
 	init_game()
 
 func _on_cantidad_value_changed(value):

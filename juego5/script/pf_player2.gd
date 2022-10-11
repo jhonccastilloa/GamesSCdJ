@@ -12,21 +12,17 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-	pass
-#	print(offset)
-#	if offset > 686 && offset < 1370:
-#		print("se volteara la image")
-##		$spr_player2.flip_h=0
-#	elif offset > 1371.69:
-#		print("se volteara ")
-#		$spr_player2.flip_h=1
-#	print(self.get_rotation_degrees())
+	if offset > 686 && offset < 1370:
+		$a_player2/spr_player2.flip_h=false
+#		$spr_player2.flip_h=0
+	elif offset > 1327.69:
+		$a_player2/spr_player2.flip_h=1
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
 
 
 func _on_tsb_player2_released():
-	velocity+=1
+	velocity+=0.05
 	self.offset += velocity
 	pass # Replace with function body.

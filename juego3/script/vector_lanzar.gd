@@ -28,20 +28,25 @@ func _physics_process(delta):
 
 		
 		
-func _reset():
-	var position_start = Vector2.ZERO
-	var position_end = Vector2.ZERO
-	var vector = Vector2.ZERO
-	update()
+
 	
 func _draw()->void:
 	draw_line(position_start-global_position,
 		(position_end-global_position),
-		Color.blue,8)
-	draw_line(position_start-global_position,(position_start-global_position)+vector,
-		Color.red,18)
+		Color.blue,4)
+	draw_line(position_start-global_position,((position_start-global_position)+vector*4),
+		Color.red,9)
+func _reset():
+	var position_start = Vector2.ZERO
+	var position_end = Vector2.ZERO
+	var vector = Vector2.ZERO
+	print(vector)
+	
 func _input(event)->void:
-	if not touch_down:
+	if !touch_down:
+		var position_start = Vector2.ZERO
+		var position_end = Vector2.ZERO
+		var vector = Vector2.ZERO
 		return
 #	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
 	if event is InputEventMouseButton and !event.pressed:
@@ -58,14 +63,15 @@ func _input(event)->void:
 		update()
 
 func _on_vector_lanzar_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
-#	if Input.is_action_pressed("left_click"):
-		get_parent().get_node("canica").mode=1
-		
-		touch_down=true
-		position_start=event.position
-		get_parent().get_node("canica").global_position.x=position_start.x
-		get_parent().get_node("canica").global_position.y=position_start.y
+	if get_parent().get_node("canica").sleeping:
+		if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
+	#	if Input.is_action_pressed("left_click"):
+			get_parent().get_node("canica").mode=1
+			
+			touch_down=true
+			position_start=event.position
+			get_parent().get_node("canica").global_position.x=position_start.x
+			get_parent().get_node("canica").global_position.y=position_start.y
 #		print(position_start)
 	pass # Replace with function body.
 

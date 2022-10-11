@@ -1,19 +1,27 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://juego5/script/worldG5.gd" type="Script" id=1]
-[ext_resource path="res://juego5/environment/lineDark44.png" type="Texture" id=2]
-[ext_resource path="res://juego5/script/PathFollow2D.gd" type="Script" id=3]
+[ext_resource path="res://juego5/environment/shadedLight49.png" type="Texture" id=2]
+[ext_resource path="res://juego5/script/PathF_player1.gd" type="Script" id=3]
 [ext_resource path="res://juego5/script/pf_player2.gd" type="Script" id=4]
 [ext_resource path="res://juego5/environment/niñoConLlanta (2).png" type="Texture" id=5]
 [ext_resource path="res://assets/pause_black.png" type="Texture" id=6]
+[ext_resource path="res://juego5/scenes/scenario.tscn" type="PackedScene" id=7]
+[ext_resource path="res://juego5/environment/shadedDark49.png" type="Texture" id=8]
+[ext_resource path="res://tipografias/Candal.ttf" type="DynamicFontData" id=9]
 
-[sub_resource type="Curve2D" id=1]
+[sub_resource type="Curve2D" id=5]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 48, 152, 0, 0, 0, 0, 704, 152, 0, 0, 0, 0, 704, 120, 0, 0, 0, 0, 584, 120, 0, 0, 0, 0, 48, 120, 0, 0, 0, 0, 48, 88, 0, 0, 0, 0, 704, 88, 0, 0, 0, 0, 704, 56, 0, 0, 0, 0, 48, 56, 0, 0, 0, 0, 48, 24, 0, 0, 0, 0, 704, 24 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -624, 0, 0, 0, 0, 0, -624, 64, 0, 0, 0, 0, -48, 64, 0, 0, 0, 0, -48, 128, 0, 0, 0, 0, -648, 128 )
 }
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 24, 24 )
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 48, 152, 0, 0, 0, 0, 669, 152.615, 0, 0, 0, 0, 669, 89.5995, 0, 0, 0, 0, 85, 89.5995, 0, 0, 0, 0, 85, 26.5845, 0, 0, 0, 0, 669, 26.5845, 0, 0, 0, 0, 685, 26.5845 )
+}
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 24, 23.6307 )
@@ -21,29 +29,42 @@ extents = Vector2( 24, 23.6307 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 5, 5 )
 
+[sub_resource type="DynamicFont" id=6]
+size = 184
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 9 )
+
 [node name="worldG5" type="Node"]
 script = ExtResource( 1 )
 
-[node name="path_player1" type="Path2D" parent="."]
-curve = SubResource( 1 )
+[node name="Node2D" parent="." instance=ExtResource( 7 )]
 
-[node name="pf_player1" type="PathFollow2D" parent="path_player1"]
-position = Vector2( 48, 152 )
+[node name="Path_player1" type="Path2D" parent="."]
+position = Vector2( 688, 64 )
+curve = SubResource( 5 )
+
+[node name="PathF_player1" type="PathFollow2D" parent="Path_player1"]
+position = Vector2( -11.0059, 0 )
+rotation = 3.14159
+offset = 11.02
+rotate = false
 loop = false
 script = ExtResource( 3 )
 
-[node name="a_player1" type="Area2D" parent="path_player1/pf_player1"]
+[node name="a_player1" type="Area2D" parent="Path_player1/PathF_player1"]
 
-[node name="spr_player1" type="Sprite" parent="path_player1/pf_player1/a_player1"]
+[node name="spr_player1" type="Sprite" parent="Path_player1/PathF_player1/a_player1"]
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 5 )
 flip_h = true
+flip_v = true
 
-[node name="cs_player1" type="CollisionShape2D" parent="path_player1/pf_player1/a_player1"]
+[node name="cs_player1" type="CollisionShape2D" parent="Path_player1/PathF_player1/a_player1"]
 shape = SubResource( 4 )
 
 [node name="path_player2" type="Path2D" parent="."]
-position = Vector2( 0, 168 )
+position = Vector2( 11, 229 )
 scale = Vector2( 1, 1.01563 )
 curve = SubResource( 1 )
 
@@ -65,30 +86,35 @@ position = Vector2( 0, -2.3392 )
 shape = SubResource( 2 )
 
 [node name="tsb_player1" type="TouchScreenButton" parent="."]
-position = Vector2( 144, 432 )
-rotation = 3.14159
-normal = ExtResource( 2 )
+position = Vector2( 672, 120 )
+rotation = 0.0296706
+scale = Vector2( 0.8, 0.8 )
+normal = ExtResource( 8 )
+pressed = ExtResource( 2 )
 
 [node name="tsb_player2" type="TouchScreenButton" parent="."]
-position = Vector2( 672, 424 )
+position = Vector2( 64, 328 )
 rotation = 3.14159
-normal = ExtResource( 2 )
+scale = Vector2( 0.8, 0.8 )
+normal = ExtResource( 8 )
+pressed = ExtResource( 2 )
 
 [node name="a_win_player2" type="Area2D" parent="."]
 position = Vector2( 296, 32 )
 
 [node name="cs_player2" type="CollisionShape2D" parent="a_win_player2"]
-position = Vector2( 408, 160 )
+position = Vector2( 400, 224 )
 shape = SubResource( 3 )
 
 [node name="a_win_player1" type="Area2D" parent="."]
 position = Vector2( 296, -136 )
 
 [node name="cs_player1" type="CollisionShape2D" parent="a_win_player1"]
-position = Vector2( 408, 160 )
+position = Vector2( -256, 328 )
 shape = SubResource( 3 )
 
 [node name="btn_pause" type="Button" parent="."]
+pause_mode = 2
 margin_right = 12.0
 margin_bottom = 20.0
 icon = ExtResource( 6 )
@@ -96,8 +122,24 @@ flat = true
 
 [node name="Screen" type="CanvasLayer" parent="."]
 
-[connection signal="released" from="tsb_player1" to="path_player1/pf_player1" method="_on_TouchScreenButton_released"]
+[node name="Timer" type="Timer" parent="."]
+pause_mode = 2
+autostart = true
+
+[node name="lbl_timeout" type="Label" parent="."]
+pause_mode = 2
+margin_left = 216.0
+margin_top = 88.0
+margin_right = 536.0
+margin_bottom = 327.0
+custom_fonts/font = SubResource( 6 )
+text = "5"
+align = 1
+valign = 1
+
+[connection signal="released" from="tsb_player1" to="Path_player1/PathF_player1" method="_on_tsb_player1_released"]
 [connection signal="released" from="tsb_player2" to="path_player2/pf_player2" method="_on_tsb_player2_released"]
 [connection signal="area_entered" from="a_win_player2" to="." method="_on_a_win_player2_area_entered"]
 [connection signal="area_entered" from="a_win_player1" to="." method="_on_a_win_player1_area_entered"]
 [connection signal="pressed" from="btn_pause" to="." method="_on_btn_pause_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
