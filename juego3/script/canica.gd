@@ -35,8 +35,8 @@ func launch(force : Vector2):
 
 
 
-func _on_canica_sleeping_state_changed():
-#	self.mode=1
-	print("dormido")
+#func _on_canica_sleeping_state_changed():
+##	self.mode=1
+#	print("dormido")
 	
 	pass # Replace with function body.

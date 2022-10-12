@@ -4,11 +4,11 @@ var ovejaEli = 0
 var num_win=0
 var scene_pause = load("res://menu_pause.tscn")
 var scene_win = load("res://juego1/environment/menu_win.tscn")
-
 var pause=false
 func _ready():
 	print(scene_win)
 	pass
+
 
 func ovejasMuertas():
 	ovejaEli+=1

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fonde (1).png-bf327a2196fc123e71e4ed9fcb5986b0.stex"
+path="res://.import/icon.png-8d0a0196e8caa0618b8e4d68c575e465.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://juego1/environment/fonde (1).png"
-dest_files=[ "res://.import/fonde (1).png-bf327a2196fc123e71e4ed9fcb5986b0.stex" ]
+source_file="res://juego1/dragandrop/icon.png"
+dest_files=[ "res://.import/icon.png-8d0a0196e8caa0618b8e4d68c575e465.stex" ]
 
 [params]
 

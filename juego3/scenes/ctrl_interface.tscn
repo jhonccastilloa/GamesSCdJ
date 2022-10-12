@@ -35,14 +35,14 @@ custom_constants/separation = 12
 
 [node name="lbl_titulo" type="Label" parent="h"]
 margin_top = 5.0
-margin_right = 227.0
+margin_right = 213.0
 margin_bottom = 34.0
 custom_fonts/font = SubResource( 1 )
-text = "Canicas obtenidas"
+text = "Canicas player 1:"
 
 [node name="lbl_score" type="Label" parent="h"]
-margin_left = 239.0
-margin_right = 261.0
+margin_left = 225.0
+margin_right = 247.0
 margin_bottom = 40.0
 custom_fonts/font = SubResource( 2 )
 text = "0"

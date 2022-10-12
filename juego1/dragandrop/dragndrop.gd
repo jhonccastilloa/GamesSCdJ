@@ -7,13 +7,14 @@ var rest_nodes = []
 func _ready():
 	rest_nodes = get_tree().get_nodes_in_group("zone")
 	
-	rest_point = rest_nodes[22].global_position
+	rest_point = rest_nodes[1].global_position
 	rest_nodes[0].select()
-	
+
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
 		if event.pressed:
 			selected = true
+		
 func _physics_process(delta):
 	if selected:
 		global_position = lerp(global_position, get_global_mouse_position(), 25 * delta)
@@ -33,3 +34,6 @@ func _input(event):
 					child.select()
 					rest_point = child.global_position
 					shortest_dist = distance
+
+func topple():
+	$AnimationPlayer.play("topple")

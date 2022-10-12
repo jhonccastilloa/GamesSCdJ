@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://juego1/environment/LineaGanar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://juego1/zorro/zorro.tscn" type="PackedScene" id=2]
@@ -9,6 +9,19 @@
 [ext_resource path="res://assets/pause_black.png" type="Texture" id=7]
 [ext_resource path="res://assets/pause.png" type="Texture" id=8]
 [ext_resource path="res://tipografias/Candal.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://juego1/dragandrop/drop_zone.tscn" type="PackedScene" id=10]
+[ext_resource path="res://juego1/oveja/oveja4.gd" type="Script" id=11]
+[ext_resource path="res://juego1/oveja/ovejaprueba.gd" type="Script" id=12]
+[ext_resource path="res://juego1/oveja/oveja1.gd" type="Script" id=13]
+[ext_resource path="res://juego1/oveja/oveja8.gd" type="Script" id=14]
+[ext_resource path="res://juego1/oveja/oveja5.gd" type="Script" id=15]
+[ext_resource path="res://juego1/oveja/oveja6.gd" type="Script" id=16]
+[ext_resource path="res://juego1/oveja/oveja7.gd" type="Script" id=17]
+[ext_resource path="res://juego1/oveja/oveja3.gd" type="Script" id=18]
+[ext_resource path="res://juego1/oveja/oveja10.gd" type="Script" id=19]
+[ext_resource path="res://juego1/oveja/oveja9.gd" type="Script" id=20]
+[ext_resource path="res://juego1/oveja/oveja12.gd" type="Script" id=21]
+[ext_resource path="res://juego1/oveja/oveja11.gd" type="Script" id=22]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -27,49 +40,57 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="zorro" parent="." instance=ExtResource( 2 )]
-position = Vector2( 311, 216 )
+position = Vector2( 145, 212 )
 collision_layer = 2
 collision_mask = 2
 
 [node name="oveja" parent="." instance=ExtResource( 3 )]
-position = Vector2( 514, 30 )
+position = Vector2( 275, 361 )
+script = ExtResource( 12 )
 
 [node name="oveja2" parent="." instance=ExtResource( 3 )]
-light_mask = 2
-position = Vector2( 511, 398 )
+position = Vector2( 275, 360 )
+script = ExtResource( 13 )
 
 [node name="oveja3" parent="." instance=ExtResource( 3 )]
-light_mask = 4
-position = Vector2( 610, 403 )
+position = Vector2( 275, 360 )
+script = ExtResource( 18 )
 
 [node name="oveja4" parent="." instance=ExtResource( 3 )]
-light_mask = 8
-position = Vector2( 606, 304 )
+position = Vector2( 275, 360 )
+script = ExtResource( 11 )
 
 [node name="oveja5" parent="." instance=ExtResource( 3 )]
-light_mask = 16
-position = Vector2( 607, 215 )
+position = Vector2( 275, 360 )
+script = ExtResource( 15 )
 
 [node name="oveja6" parent="." instance=ExtResource( 3 )]
-position = Vector2( 605, 122 )
+position = Vector2( 275, 360 )
+script = ExtResource( 16 )
 
 [node name="oveja7" parent="." instance=ExtResource( 3 )]
-position = Vector2( 605, 37 )
+position = Vector2( 275, 360 )
+script = ExtResource( 17 )
 
 [node name="oveja8" parent="." instance=ExtResource( 3 )]
-position = Vector2( 695, 398 )
+position = Vector2( 275, 360 )
+script = ExtResource( 14 )
 
 [node name="oveja9" parent="." instance=ExtResource( 3 )]
-position = Vector2( 702, 305 )
+position = Vector2( 275, 360 )
+script = ExtResource( 20 )
 
 [node name="oveja10" parent="." instance=ExtResource( 3 )]
-position = Vector2( 700, 212 )
+position = Vector2( 275, 360 )
+script = ExtResource( 19 )
 
 [node name="oveja11" parent="." instance=ExtResource( 3 )]
-position = Vector2( 702, 123 )
+position = Vector2( 275, 360 )
+script = ExtResource( 22 )
 
 [node name="oveja12" parent="." instance=ExtResource( 3 )]
-position = Vector2( 696, 39 )
+position = Vector2( 275, 360 )
+script = ExtResource( 21 )
 
 [node name="InterfazDeUsuario" parent="." instance=ExtResource( 5 )]
 margin_left = 53.0
@@ -96,6 +117,126 @@ custom_colors/font_color = Color( 0, 1, 0.94902, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "El ZORRO Y 
 LAS OVEJAS"
+percent_visible = 0.0
+
+[node name="zone" type="Node2D" parent="."]
+
+[node name="drop_zone" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 695, 37 )
+
+[node name="drop_zone2" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 698, 123 )
+
+[node name="drop_zone3" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 699, 212 )
+
+[node name="drop_zone4" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 695, 307 )
+
+[node name="drop_zone5" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 694, 397 )
+
+[node name="drop_zone6" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 606, 37 )
+
+[node name="drop_zone7" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 606, 122 )
+
+[node name="drop_zone8" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 607, 213 )
+
+[node name="drop_zone9" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 607, 308 )
+
+[node name="drop_zone10" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 607, 400 )
+
+[node name="drop_zone11" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 512, 35 )
+
+[node name="drop_zone12" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 511, 399 )
+
+[node name="drop_zone13" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 512, 215 )
+
+[node name="drop_zone14" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 512, 127 )
+
+[node name="drop_zone15" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 420, 34 )
+
+[node name="drop_zone16" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 419, 122 )
+
+[node name="drop_zone17" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 420, 212 )
+
+[node name="drop_zone18" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 421, 398 )
+
+[node name="drop_zone19" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 511, 305 )
+
+[node name="drop_zone20" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 418, 305 )
+
+[node name="drop_zone21" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 327, 398 )
+
+[node name="drop_zone22" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 326, 306 )
+
+[node name="drop_zone23" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 311, 217 )
+
+[node name="drop_zone24" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 325, 123 )
+
+[node name="drop_zone25" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 326, 34 )
+
+[node name="drop_zone26" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 208, 158 )
+
+[node name="drop_zone27" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 209, 216 )
+
+[node name="drop_zone28" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 210, 273 )
+
+[node name="drop_zone29" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 147, 308 )
+
+[node name="drop_zone30" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 145, 216 )
+
+[node name="drop_zone31" parent="zone" instance=ExtResource( 10 )]
+position = Vector2( 146, 123 )
 
 [connection signal="area_entered" from="LineaGanar" to="." method="_on_LineaGanar_area_entered"]
+[connection signal="body_entered" from="oveja" to="oveja" method="_on_oveja13_body_entered"]
+[connection signal="input_event" from="oveja" to="oveja" method="_on_oveja13_input_event"]
+[connection signal="body_entered" from="oveja2" to="oveja2" method="_on_oveja13_body_entered"]
+[connection signal="input_event" from="oveja2" to="oveja2" method="_on_oveja13_input_event"]
+[connection signal="body_entered" from="oveja3" to="oveja3" method="_on_oveja13_body_entered"]
+[connection signal="input_event" from="oveja3" to="oveja3" method="_on_oveja13_input_event"]
+[connection signal="body_entered" from="oveja4" to="oveja4" method="_on_oveja13_body_entered"]
+[connection signal="input_event" from="oveja4" to="oveja4" method="_on_oveja13_input_event"]
+[connection signal="body_entered" from="oveja5" to="oveja5" method="_on_oveja13_body_entered"]
+[connection signal="input_event" from="oveja5" to="oveja5" method="_on_oveja13_input_event"]
+[connection signal="body_entered" from="oveja6" to="oveja6" method="_on_oveja13_body_entered"]
+[connection signal="input_event" from="oveja6" to="oveja6" method="_on_oveja13_input_event"]
+[connection signal="body_entered" from="oveja7" to="oveja7" method="_on_oveja13_body_entered"]
+[connection signal="input_event" from="oveja7" to="oveja7" method="_on_oveja13_input_event"]
+[connection signal="body_entered" from="oveja8" to="oveja8" method="_on_oveja13_body_entered"]
+[connection signal="input_event" from="oveja8" to="oveja8" method="_on_oveja13_input_event"]
+[connection signal="body_entered" from="oveja9" to="oveja9" method="_on_oveja13_body_entered"]
+[connection signal="input_event" from="oveja9" to="oveja9" method="_on_oveja13_input_event"]
+[connection signal="body_entered" from="oveja10" to="oveja10" method="_on_oveja13_body_entered"]
+[connection signal="input_event" from="oveja10" to="oveja10" method="_on_oveja13_input_event"]
+[connection signal="body_entered" from="oveja11" to="oveja11" method="_on_oveja13_body_entered"]
+[connection signal="input_event" from="oveja11" to="oveja11" method="_on_oveja13_input_event"]
+[connection signal="body_entered" from="oveja12" to="oveja12" method="_on_oveja13_body_entered"]
+[connection signal="input_event" from="oveja12" to="oveja12" method="_on_oveja13_input_event"]
 [connection signal="pressed" from="btn_pause" to="." method="_on_btn_pause_pressed"]

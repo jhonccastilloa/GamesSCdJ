@@ -56,6 +56,12 @@ margin_top = 12.0
 margin_right = 324.0
 margin_bottom = 12.0
 
+[node name="ctrl_interface2" parent="." instance=ExtResource( 5 )]
+margin_left = 326.0
+margin_top = 390.0
+margin_right = 326.0
+margin_bottom = 390.0
+
 [node name="area_circulo" type="Area2D" parent="."]
 position = Vector2( 304, 200 )
 collision_layer = 16
@@ -137,6 +143,7 @@ mouse_filter = 2
 color = Color( 0.113725, 0.819608, 0.788235, 0.709804 )
 
 [node name="a_canica" type="Area2D" parent="canica"]
+position = Vector2( 0, -1 )
 collision_mask = 5
 
 [node name="cs_canica" type="CollisionShape2D" parent="canica/a_canica"]
@@ -167,6 +174,6 @@ shape = SubResource( 10 )
 [connection signal="body_entered" from="area_circulo" to="." method="_on_area_circulo_body_entered"]
 [connection signal="body_exited" from="area_circulo" to="." method="_on_area_circulo_body_exited"]
 [connection signal="vector_created" from="vector_lanzar" to="canica" method="launch"]
-[connection signal="sleeping_state_changed" from="canica" to="canica" method="_on_canica_sleeping_state_changed"]
+[connection signal="sleeping_state_changed" from="canica" to="." method="_on_canica_sleeping_state_changed"]
 [connection signal="pressed" from="btn_pause" to="." method="_on_btn_pause_pressed"]
 [connection signal="area_entered" from="area_linea" to="." method="_on_area_linea_area_entered"]

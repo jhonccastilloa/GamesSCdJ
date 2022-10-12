@@ -15,6 +15,7 @@ var vector := Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+#	print(get_parent().get_node("ctrl_interface/h/lbl_titulo"))
 #	_draw()
 #	get_parent().get_node("canica").position=Vector2(250,250)
 #	connect("input_event",self,"_on_input_event")
@@ -34,7 +35,7 @@ func _draw()->void:
 	draw_line(position_start-global_position,
 		(position_end-global_position),
 		Color.blue,4)
-	draw_line(position_start-global_position,((position_start-global_position)+vector*4),
+	draw_line(position_start-global_position,((position_start-global_position)+vector*0.5),
 		Color.red,9)
 func _reset():
 	var position_start = Vector2.ZERO
@@ -72,7 +73,18 @@ func _on_vector_lanzar_input_event(viewport, event, shape_idx):
 			position_start=event.position
 			get_parent().get_node("canica").global_position.x=position_start.x
 			get_parent().get_node("canica").global_position.y=position_start.y
+			_on_change_turn()
 #		print(position_start)
 	pass # Replace with function body.
 
-
+func _on_change_turn():
+	if get_parent().turno==1:
+		get_parent().get_node("ctrl_interface/h/lbl_titulo").add_color_override("font_color", Color(0.4, 0.4, 0.4,1))
+		get_parent().get_node("ctrl_interface2/h/lbl_titulo").add_color_override("font_color", Color(0,0,1,1))
+		get_parent().turno=2
+		
+	elif get_parent().turno==2:
+		get_parent().get_node("ctrl_interface/h/lbl_titulo").add_color_override("font_color", Color(1,0,0,1))
+		get_parent().get_node("ctrl_interface2/h/lbl_titulo").add_color_override("font_color", Color(0.4, 0.4, 0.4,1))
+		get_parent().turno=1
+	
