@@ -3,13 +3,13 @@
 [ext_resource path="res://juego3/scenes/canica.tscn" type="PackedScene" id=1]
 [ext_resource path="res://juego3/scenes/vector_lanzar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://juego3/script/worldG3.gd" type="Script" id=3]
-[ext_resource path="res://juego3/environment/area_circulo.png" type="Texture" id=4]
 [ext_resource path="res://juego3/scenes/ctrl_interface.tscn" type="PackedScene" id=5]
 [ext_resource path="res://juego3/environment/TIERRA.png" type="Texture" id=6]
 [ext_resource path="res://assets/pause.png" type="Texture" id=7]
+[ext_resource path="res://juego3/scenes/map.tscn" type="PackedScene" id=8]
 
-[sub_resource type="CircleShape2D" id=8]
-radius = 91.0
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 86, 86 )
 
 [sub_resource type="PhysicsMaterial" id=3]
 
@@ -34,6 +34,7 @@ extents = Vector2( 10, 222.5 )
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 6, -6 )
 scale = Vector2( 0.741675, 0.657576 )
 texture = ExtResource( 6 )
 centered = false
@@ -47,6 +48,8 @@ rect_scale = Vector2( 0.517343, 0.524085 )
 mouse_filter = 2
 color = Color( 0.501961, 0.219608, 0.219608, 1 )
 
+[node name="map" parent="." instance=ExtResource( 8 )]
+
 [node name="ctrl_interface" parent="." instance=ExtResource( 5 )]
 margin_left = 324.0
 margin_top = 12.0
@@ -59,13 +62,8 @@ collision_layer = 16
 gravity_vec = Vector2( 0, 0 )
 
 [node name="cs_circulo" type="CollisionShape2D" parent="area_circulo"]
-position = Vector2( 5, 0 )
-shape = SubResource( 8 )
-
-[node name="Sprite" type="Sprite" parent="area_circulo"]
-position = Vector2( 5, 0 )
-scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 4 )
+position = Vector2( 0, 8 )
+shape = SubResource( 11 )
 
 [node name="canica2" parent="." groups=["canicas"] instance=ExtResource( 1 )]
 position = Vector2( 336, 144 )
@@ -76,25 +74,25 @@ position = Vector2( 280, 144 )
 physics_material_override = SubResource( 4 )
 
 [node name="canica4" parent="." groups=["canicas"] instance=ExtResource( 1 )]
-position = Vector2( 296, 192 )
+position = Vector2( 314, 210 )
 physics_material_override = SubResource( 5 )
 
 [node name="canica5" parent="." groups=["canicas"] instance=ExtResource( 1 )]
-position = Vector2( 280, 240 )
+position = Vector2( 276, 262 )
 physics_material_override = SubResource( 6 )
 
 [node name="canica6" parent="." groups=["canicas"] instance=ExtResource( 1 )]
-position = Vector2( 336, 232 )
+position = Vector2( 338, 254 )
 physics_material_override = SubResource( 7 )
 
 [node name="canica7" parent="." groups=["canicas"] instance=ExtResource( 1 )]
-position = Vector2( 336, 184 )
+position = Vector2( 354, 191 )
 
 [node name="canica8" parent="." groups=["canicas"] instance=ExtResource( 1 )]
 position = Vector2( 256, 176 )
 
 [node name="canica9" parent="." groups=["canicas"] instance=ExtResource( 1 )]
-position = Vector2( 256, 224 )
+position = Vector2( 243, 240 )
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
 position = Vector2( 85, -44 )
@@ -120,11 +118,11 @@ rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="vector_lanzar" parent="." instance=ExtResource( 2 )]
-position = Vector2( 649, 218 )
+position = Vector2( 640, 208 )
 maximum_length = 500
 
 [node name="canica" parent="." instance=ExtResource( 1 )]
-position = Vector2( 649, 217 )
+position = Vector2( 641, 208 )
 collision_layer = 2
 collision_mask = 5
 mass = 4.12
@@ -142,6 +140,7 @@ color = Color( 0.113725, 0.819608, 0.788235, 0.709804 )
 collision_mask = 5
 
 [node name="cs_canica" type="CollisionShape2D" parent="canica/a_canica"]
+position = Vector2( -1, 1 )
 shape = SubResource( 9 )
 
 [node name="btn_pause" type="Button" parent="."]

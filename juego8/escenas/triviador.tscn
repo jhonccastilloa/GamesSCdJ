@@ -1,0 +1,108 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://tipografias/Kenney Pixel.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://juego8/images/JUEGO.png" type="Texture" id=2]
+[ext_resource path="res://juego8/escenas/triviador.gd" type="Script" id=3]
+[ext_resource path="res://juego6/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=3]
+size = 45
+outline_color = Color( 0.823529, 0.152941, 0.152941, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 62
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.854902, 0.168627, 0.168627, 1 )
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 41, 165 )
+script = ExtResource( 3 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 229.0
+margin_top = 25.0
+margin_right = 403.0
+margin_bottom = 218.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+show_behind_parent = true
+margin_left = -41.0
+margin_top = -164.0
+margin_right = 689.0
+margin_bottom = 272.0
+texture = ExtResource( 2 )
+
+[node name="message_label" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 29.0
+margin_top = -72.0
+margin_right = 609.0
+margin_bottom = 27.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "JUEGO DE PREGUNTAS"
+
+[node name="SALIR" type="Button" parent="Control"]
+margin_left = 519.0
+margin_top = 196.0
+margin_right = 693.0
+margin_bottom = 249.0
+custom_colors/font_color_pressed = Color( 0.0784314, 1, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+text = "SALIR"
+flat = true
+
+[node name="nivel1" type="Button" parent="Control"]
+margin_left = 249.0
+margin_top = 45.0
+margin_right = 423.0
+margin_bottom = 98.0
+custom_colors/font_color_pressed = Color( 0.0784314, 1, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+text = "NIVEL I"
+flat = true
+
+[node name="nivel3" type="Button" parent="Control"]
+margin_left = 249.0
+margin_top = 144.0
+margin_right = 423.0
+margin_bottom = 197.0
+custom_colors/font_color_pressed = Color( 0.0784314, 1, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+text = "NIVEL III"
+flat = true
+
+[node name="nivel2" type="Button" parent="Control"]
+margin_left = 242.0
+margin_top = 92.0
+margin_right = 416.0
+margin_bottom = 145.0
+custom_colors/font_color_pressed = Color( 0.0784314, 1, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+text = "NIVEL II"
+flat = true
+
+[connection signal="pressed" from="Control/SALIR" to="." method="_on_SALIR_pressed"]
+[connection signal="pressed" from="Control/nivel1" to="." method="_on_nivel1_pressed"]
+[connection signal="pressed" from="Control/nivel3" to="." method="_on_nivel3_pressed"]
+[connection signal="pressed" from="Control/nivel2" to="." method="_on_nivel2_pressed"]

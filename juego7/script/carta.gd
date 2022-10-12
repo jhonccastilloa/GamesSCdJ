@@ -10,6 +10,8 @@ onready var frontal= $frontal
 onready var cubierta= $cubierta
 onready var click= $clicked
 
+
+
 func _ready():
 	$anim.play("cubrir")
 	click.connect("clicked", self, "_on_clicked")
@@ -19,8 +21,8 @@ func poner_cara (f: String):
 	
 	frontal.texture = load("res://juego7/cartas/"+cara+".jpg")
 func flip():
-	if esta_volteado: return
 	
+	if esta_volteado: return
 	$anim.play("descubrir")
 	esta_volteado=true
 	emit_signal("volteado",self)

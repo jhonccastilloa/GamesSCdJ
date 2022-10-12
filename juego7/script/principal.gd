@@ -8,11 +8,16 @@ onready var tiempo= $tiempo
 var carta_al_descubierto = null
 var _cartas = []
 var scene_pause = load("res://menu_pause.tscn")
+var scene_end = load("res://juego7/escenas/ctrl_endgame.tscn")
+
 var pause=false
 var cantidad_actual = 0
+var time=0
+var point=0
 
 func _ready():
 	randomize()
+	
 	tiempo.connect("timeout",self,"tiempo_cumplido")
 	$label.text = str(cantidad_carta)
 
@@ -55,6 +60,7 @@ func _columnas_para_cartas(carta: int) -> int:
 
 
 func init_game():
+	
 	cantidad_carta= cantidad_actual ##*2
 	
 	var columns: int = _columnas_para_cartas(cantidad_carta)
@@ -104,6 +110,7 @@ func init_game():
 		carta.scale = Vector2(ancho_carta/252.0, ancho_carta/252.0)
 		self.add_child(carta)
 		carta.poner_cara(caras[i])
+#		carta.scale=Vector2(,1)
 		
 		carta.connect("clicked", self, "_on_clicked_carta")
 		carta.connect("volteado", self, "_on_card_flipped")
@@ -115,12 +122,17 @@ func _on_clicked_carta(carta):
 func _on_card_flipped(carta):
 	if carta.esta_volteado:
 		if carta_al_descubierto == null:
+			
 			carta_al_descubierto = carta
 		else:
 			if carta_al_descubierto.cara == carta.cara:
+				print("holi")
+				_points()
 				carta_al_descubierto= null
 				if _are_full_card_flipped():
-					clear_game()
+					print("holi perro")
+					yield(get_tree().create_timer(1),"timeout")
+					_end_game("VOLTEASTES TODAS LAS CARTAS")
 			else:
 				_cartas.append(carta_al_descubierto)
 				_cartas.append(carta)
@@ -162,11 +174,16 @@ func _on_boton_jugar_pressed():
 	$cantidad.visible=false
 	$label.visible= false
 	$label2.visible= false
+	$lbl_tiempo.visible=true
+	$lbl_point.visible=true
+	$lbl_puntaje.visible=true
+	$tmp_game.start()
+	time=$cantidad.value+9
 	init_game()
 
 func _on_cantidad_value_changed(value):
 	$label.text = str(value)
-
+	
 
 func _on_TextureButton_pressed():
 	if !pause:
@@ -178,3 +195,23 @@ func _on_TextureButton_pressed():
 func on_restart():
 	get_tree().paused=0
 	get_tree().change_scene("res://juego7/escenas/principal.tscn")
+	
+
+func _on_tmp_game_timeout():
+	time-=1
+	$lbl_tiempo.text=str(time)
+	if(time==0):
+		_end_game("SE ACABO EL TIEMPO")
+
+func _end_game(text):
+	var end_instance=scene_end.instance()
+	$screen_game.add_child(end_instance)
+	var lbl_info=$"screen_game/ctrl_endgame/VBoxContainer/lbl_info"
+	lbl_info.text=text
+	lbl_info.align=1
+	get_tree().paused=1
+
+func _points():
+	point+=25
+	time+=5
+	$"lbl_puntaje".text=str(point)

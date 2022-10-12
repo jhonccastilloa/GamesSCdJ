@@ -20,29 +20,27 @@ func _ready():
 
 
 func _on_juego1_pressed():
-	get_tree().change_scene("res://juego1/world.tscn")
+	get_tree().change_scene("res://juego1/animaczorro.tscn")
 
 
 func _on_juego2_pressed():
-	get_tree().change_scene("res://juego2/worldG2.tscn")
+	get_tree().change_scene("res://juego2/info.tscn")
 	
 
 func _on_juego3_pressed():
-	get_tree().change_scene("res://juego3/worldG3.tscn")
+	get_tree().change_scene("res://juego3/info.tscn")
 
 
 func _on_juego4_pressed():
-	get_tree().change_scene("res://juego5/worldG5.tscn")
+	get_tree().change_scene("res://juego5/info.tscn")
 
 
 func _on_juego5_pressed():
-	get_tree().change_scene("res://juego6/main.tscn")
+	get_tree().change_scene("res://juego6/info.tscn")
 
 
 func _on_juego6_pressed():
-	get_tree().change_scene("res://juego7/escenas/principal.tscn")
-
-
+	get_tree().change_scene("res://juego7/info.tscn")
 
 
 

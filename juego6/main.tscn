@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://juego6/script/main.gd" type="Script" id=1]
 [ext_resource path="res://juego6/art/lineDark21.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://juego6/art/lineDark19.png" type="Texture" id=7]
 [ext_resource path="res://juego6/art/lineDark20.png" type="Texture" id=8]
 [ext_resource path="res://assets/pause.png" type="Texture" id=9]
+[ext_resource path="res://juego6/art/CANCHA (1) (1).png" type="Texture" id=10]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -22,7 +23,16 @@ Mob = ExtResource( 4 )
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 728.0
 margin_bottom = 440.0
-color = Color( 0, 0.6, 0.615686, 1 )
+color = Color( 0.211765, 0.647059, 0.329412, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 88.0
+margin_top = 69.0
+margin_right = 637.0
+margin_bottom = 391.0
+texture = ExtResource( 10 )
 
 [node name="HUD" parent="." instance=ExtResource( 6 )]
 
