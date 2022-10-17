@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://SONIDOS/1.mp3" type="AudioStream" id=1]
+[ext_resource path="res://SONIDOS/11.mp3" type="AudioStream" id=1]
 [ext_resource path="res://MenuPrincipal.gd" type="Script" id=2]
 [ext_resource path="res://tipografias/Kenney Pixel.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://MENU/MENU 2.0.png" type="Texture" id=4]

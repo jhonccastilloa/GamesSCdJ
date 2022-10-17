@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://juego8/images/JUEGO.png" type="Texture" id=1]
-[ext_resource path="res://juego8/images/ZORRO_Y_LAS_OVEJAS-removebg-preview.png" type="Texture" id=2]
+[ext_resource path="res://fotos/CONVERTIDO/ZORRO-removebg-preview.png" type="Texture" id=2]
 [ext_resource path="res://juego8/images/descarga.png" type="Texture" id=3]
 [ext_resource path="res://tipografias/Candal.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://juego1/animaczorro.gd" type="Script" id=5]

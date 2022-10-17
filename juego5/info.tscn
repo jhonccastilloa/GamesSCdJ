@@ -3,7 +3,7 @@
 [ext_resource path="res://juego5/infogame5.gd" type="Script" id=1]
 [ext_resource path="res://juego8/images/descarga.png" type="Texture" id=2]
 [ext_resource path="res://juego8/images/JUEGO.png" type="Texture" id=3]
-[ext_resource path="res://assets/info/LLANTAS-removebg-preview.png" type="Texture" id=4]
+[ext_resource path="res://fotos/CONVERTIDO/LLANTAS-removebg-preview.png" type="Texture" id=4]
 [ext_resource path="res://assets/forward.png" type="Texture" id=5]
 [ext_resource path="res://tipografias/Candal.ttf" type="DynamicFontData" id=6]
 

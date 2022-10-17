@@ -31,11 +31,13 @@ func preguntar():
 		$RESPUESTA1.text ="5 lados"
 		$RESPUESTA2.text= "6 lados"
 		$RESPUESTA3.text="4 lados"
-
+var acumulador=0
 func responder():
 	if pregunta_numero ==0:
 		if respuesta==1:
 			$RESPUESTAS.text="CORRECTO"
+			acumulador+=1
+			$puntaje.text=str(acumulador)
 		if respuesta==2:
 			$RESPUESTAS.text="INCORRECTO"
 		if respuesta==3:
@@ -45,6 +47,8 @@ func responder():
 			$RESPUESTAS.text="INCORRECTO"
 		if respuesta==2:
 			$RESPUESTAS.text="CORRECTO"
+			acumulador+=1
+			$puntaje.text=str(acumulador)
 		if respuesta==3:
 			$RESPUESTAS.text="INCORRECTO"
 	if pregunta_numero ==2:
@@ -54,6 +58,8 @@ func responder():
 			$RESPUESTAS.text="INCORRECTO"
 		if respuesta==3:
 			$RESPUESTAS.text="CORRECTO"
+			acumulador+=1
+			$puntaje.text=str(acumulador)
 
 func _on_RESPUESTA1_pressed():
 	respuesta=1
@@ -80,6 +86,4 @@ func _on_ONE_pressed():
 
 
 func _on_SALIR_pressed():
-	respuesta=3
-	responder()
-	preguntar()
+	get_tree().change_scene("res://juego8/escenas/triviador.tscn")

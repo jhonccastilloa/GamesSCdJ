@@ -1,9 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://tipografias/Kenney Pixel.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://juego8/escenas/nivel1.gd" type="Script" id=2]
 [ext_resource path="res://juego6/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://juego8/images/JUEGO.png" type="Texture" id=4]
+[ext_resource path="res://fotos/CONVERTIDO/fondooo (1).jpg" type="Texture" id=4]
 [ext_resource path="res://tipografias/Bullpen3D.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://tipografias/Candal.ttf" type="DynamicFontData" id=6]
 
@@ -28,6 +28,21 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.854902, 0.168627, 0.168627, 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 62
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.854902, 0.168627, 0.168627, 1 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 50
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
@@ -60,9 +75,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = 82.0
-margin_top = 146.0
+margin_top = 163.0
 margin_right = 663.0
-margin_bottom = 187.0
+margin_bottom = 204.0
 custom_colors/font_color = Color( 0.00784314, 0.00392157, 0.00392157, 1 )
 custom_fonts/font = SubResource( 4 )
 
@@ -81,37 +96,62 @@ custom_fonts/font = SubResource( 5 )
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="RESPUESTA1" type="Button" parent="."]
-margin_left = 275.0
-margin_top = 179.0
-margin_right = 449.0
-margin_bottom = 232.0
-custom_colors/font_color_pressed = Color( 0.0784314, 1, 0, 1 )
-custom_fonts/font = SubResource( 6 )
-custom_styles/hover = SubResource( 7 )
-flat = true
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
 
-[node name="RESPUESTA2" type="Button" parent="."]
-margin_left = 272.0
-margin_top = 233.0
-margin_right = 446.0
-margin_bottom = 286.0
+[node name="RESPUESTA1" type="Button" parent="."]
+margin_left = 62.0
+margin_top = 299.0
+margin_right = 74.0
+margin_bottom = 352.0
 custom_colors/font_color_pressed = Color( 0.0784314, 1, 0, 1 )
 custom_fonts/font = SubResource( 6 )
 custom_styles/hover = SubResource( 7 )
 flat = true
 
 [node name="RESPUESTA3" type="Button" parent="."]
-margin_left = 273.0
-margin_top = 283.0
-margin_right = 447.0
-margin_bottom = 336.0
+margin_left = 325.0
+margin_top = 299.0
+margin_right = 337.0
+margin_bottom = 352.0
 custom_colors/font_color_pressed = Color( 0.0784314, 1, 0, 1 )
 custom_fonts/font = SubResource( 6 )
 custom_styles/hover = SubResource( 7 )
 flat = true
 
+[node name="RESPUESTA2" type="Button" parent="."]
+margin_left = 532.0
+margin_top = 301.0
+margin_right = 544.0
+margin_bottom = 354.0
+custom_colors/font_color_pressed = Color( 0.0784314, 1, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+custom_styles/hover = SubResource( 7 )
+flat = true
+
+[node name="SALIR" type="Button" parent="."]
+margin_left = 549.0
+margin_top = 371.0
+margin_right = 723.0
+margin_bottom = 424.0
+custom_colors/font_color_pressed = Color( 0.0784314, 1, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+custom_styles/hover = SubResource( 9 )
+text = "SALIR"
+flat = true
+
+[node name="puntaje" type="Label" parent="."]
+margin_left = 21.0
+margin_top = 22.0
+margin_right = 95.0
+margin_bottom = 88.0
+custom_colors/font_color = Color( 1, 0.937255, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "00"
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="RESPUESTA1" to="." method="_on_RESPUESTA1_pressed"]
-[connection signal="pressed" from="RESPUESTA2" to="." method="_on_RESPUESTA2_pressed"]
 [connection signal="pressed" from="RESPUESTA3" to="." method="_on_RESPUESTA3_pressed"]
+[connection signal="pressed" from="RESPUESTA2" to="." method="_on_RESPUESTA2_pressed"]
+[connection signal="pressed" from="SALIR" to="." method="_on_SALIR_pressed"]

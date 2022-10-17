@@ -14,7 +14,7 @@ func _on_nivel3_pressed():
 
 
 func _on_SALIR_pressed():
-	get_tree().change_scene("res://juego8/escenas/nivel1.tscn")
+	get_tree().change_scene("res://Menu.tscn")
 
 
 

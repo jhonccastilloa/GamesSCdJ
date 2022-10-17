@@ -58,3 +58,7 @@ func _on_musica2_pressed():
 		$musica.playing = true
 		
 		
+
+
+func _on_juego7_pressed():
+	get_tree().change_scene("res://juego8/escenas/animacion.tscn")

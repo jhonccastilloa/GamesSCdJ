@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://tipografias/Kenney Pixel.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://juego8/images/JUEGO.png" type="Texture" id=2]
+[ext_resource path="res://fotos/CONVERTIDO/fondooo (1).jpg" type="Texture" id=2]
 [ext_resource path="res://juego8/escenas/triviador.gd" type="Script" id=3]
 [ext_resource path="res://juego6/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=4]
 
