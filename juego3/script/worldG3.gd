@@ -15,6 +15,7 @@ var turno=1
 func _ready():
 	$"ctrl_interface2/h/lbl_titulo".text="Canicas player 2:"
 	$"ctrl_interface2/h/lbl_score".text="3"
+	$musica.playing=true
 func _process(delta):
 #	print(canica_in_area)
 #	print(turno)
@@ -52,10 +53,13 @@ func _win():
 	if $canica2.sleeping and $canica3.sleeping  and $canica4.sleeping  and $canica5.sleeping  and $canica6.sleeping  and $canica7.sleeping and $canica8.sleeping  and $canica9.sleeping  and canicas <= 0:
 		if canicas_obt1>canicas_obt2:
 			_create_hud("GANO EL JUGADOR1")
+			$GANAR.playing=true
 		elif canicas_obt2>canicas_obt1:
 			_create_hud("GANO EL JUGADOR2")
+			$GANAR.playing=true
 		else:
 			_create_hud("EMPATE")
+			$GANAR.playing=true
 			
 
 func _lose_canica():
@@ -124,3 +128,11 @@ func _count_zero():
 	elif canicas_obt2==0:
 		_create_hud("GANO EL JUGADOR1")
 	
+
+var music=0
+func _on_btn_sonido_pressed():
+	music+=1
+	print (music)
+	$musica.playing=false
+	if music % 2== 0:
+		$musica.playing=true

@@ -8,6 +8,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$musica.playing = true
 	pass # Replace with function body.
 
 
@@ -46,4 +47,14 @@ func _on_juego6_pressed():
 
 func _on_salir_pressed():
 	get_tree().change_scene("res://MenuPrincipal.tscn")
-	pass # Replace with function body.
+	
+
+var musica=  0
+func _on_musica2_pressed():
+	$musica.playing = false
+	musica+=1
+	
+	if musica%2==0:
+		$musica.playing = true
+		
+		

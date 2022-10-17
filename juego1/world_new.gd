@@ -5,17 +5,24 @@ var num_win=0
 var scene_pause = load("res://menu_pause.tscn")
 var scene_win = load("res://juego1/environment/menu_win.tscn")
 var pause=false
+var sound=0
 func _ready():
 	print(scene_win)
+	$soundship.playing = true
 	pass
 
 
 func ovejasMuertas():
 	ovejaEli+=1
+	
+	$comer.playing=true
 	get_node("InterfazDeUsuario/VBoxContainer/ovejasComidas").text="0"+str(ovejaEli)
 	if(ovejaEli==6):
+		
 		win("EL ZORRO SE COMIO A LAS OVEJAS")
-	
+		
+		
+		
 	print(ovejaEli)
 
 
@@ -23,6 +30,7 @@ func _on_LineaGanar_area_entered(area):
 	num_win+=1
 	print(num_win)
 	if num_win==6:
+		
 		win("GANARON LAS OVEJAS")
 		
 
@@ -39,10 +47,19 @@ func on_restart():
 	get_tree().change_scene("res://juego1/world.tscn")
 
 func win(text):
+	
 	var scn_win=scene_win.instance()
 	$"Screen_win".add_child(scn_win)
 	var lbl_information=$"Screen_win/menu_win/HBoxContainer/lbl_information"
 	lbl_information.text=text
 	lbl_information.align=1
+	
 	get_tree().paused=1
 	
+
+
+func _on_sound_pressed():
+	$soundship.playing = false
+	sound+=1
+	if sound%2==0:
+		$soundship.playing = true

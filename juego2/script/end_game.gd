@@ -21,13 +21,16 @@ func _ready():
 	if(win_or_empate==0):
 
 		display.text="Ganó el jugador o"
+		$ganar.playing=true
 		get_parent().get_parent().get_node("Node2D/lbl_score2").text=str(int(player2)+1)
 	elif(win_or_empate==1):
 		display.text="Ganó el jugador x"
+		$ganar.playing=true
 		get_parent().get_parent().get_node("Node2D/lbl_score1").text=str(int(player1)+1)
 	if(win_or_empate==2):
 		get_parent().get_parent().get_node("Node2D/lbl_score3").text=str(int(empate)+1)
 		display.text="Empate"
+		$perder.playing=true
 
 
 func _on_Button_pressed():

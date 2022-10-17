@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/balones.mp3-c586596d4286fbee5f63d7c4cb911e24.mp3str"
+
+[deps]
+
+source_file="res://SONIDOS/balones.mp3"
+dest_files=[ "res://.import/balones.mp3-c586596d4286fbee5f63d7c4cb911e24.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

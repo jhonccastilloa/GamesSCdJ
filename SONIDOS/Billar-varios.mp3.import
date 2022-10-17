@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Billar-varios.mp3-4aa49c2408965d2de027d236f8ae6821.mp3str"
+
+[deps]
+
+source_file="res://SONIDOS/Billar-varios.mp3"
+dest_files=[ "res://.import/Billar-varios.mp3-4aa49c2408965d2de027d236f8ae6821.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

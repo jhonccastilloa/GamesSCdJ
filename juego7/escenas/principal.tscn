@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://juego7/script/principal.gd" type="Script" id=1]
 [ext_resource path="res://assets/pause_black.png" type="Texture" id=2]
@@ -6,6 +6,11 @@
 [ext_resource path="res://assets/pause.png" type="Texture" id=4]
 [ext_resource path="res://tipografias/Candal.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://assets/forward.png" type="Texture" id=6]
+[ext_resource path="res://SONIDOS/bateria.mp3" type="AudioStream" id=7]
+[ext_resource path="res://fotos/sonido 2.png" type="Texture" id=8]
+[ext_resource path="res://SONIDOS/perder (1).wav" type="AudioStream" id=9]
+[ext_resource path="res://fotos/musica.png" type="Texture" id=10]
+[ext_resource path="res://SONIDOS/ganar-ganador-.wav" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 22
@@ -87,7 +92,7 @@ max_value = 16.0
 step = 2.0
 value = 2.0
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="btn_pause" type="TextureButton" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = 680.0
@@ -95,6 +100,15 @@ margin_right = 730.0
 margin_bottom = 50.0
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 2 )
+
+[node name="btn_musica" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 643.0
+margin_right = 693.0
+margin_bottom = 50.0
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 8 )
 
 [node name="Screen" type="CanvasLayer" parent="."]
 
@@ -127,7 +141,20 @@ text = "PUNTAJE:"
 
 [node name="screen_game" type="CanvasLayer" parent="."]
 
+[node name="musica" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 7 )
+
+[node name="perder" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 9 )
+
+[node name="ganar" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 11 )
+
 [connection signal="pressed" from="boton_jugar" to="." method="_on_boton_jugar_pressed"]
 [connection signal="value_changed" from="cantidad" to="." method="_on_cantidad_value_changed"]
-[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="btn_pause" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="btn_musica" to="." method="_on_btn_musica_pressed"]
 [connection signal="timeout" from="tmp_game" to="." method="_on_tmp_game_timeout"]

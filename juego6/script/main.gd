@@ -7,6 +7,7 @@ var scene_pause = load("res://menu_pause.tscn")
 var pause=false
 func _ready():
 	randomize()
+	$musica.playing= true
 	pass
 #	print($start_timer.)
 func new_game():
@@ -71,3 +72,12 @@ func _on_TouchScreenButton_pressed():
 func on_restart():
 	get_tree().paused=0
 	get_tree().change_scene("res://juego6/main.tscn")
+
+var musica=0
+func _on_btn_musica_pressed():
+	$musica.playing = false
+	musica+=1
+	
+	if musica%2==0:
+		$musica.playing = true
+		

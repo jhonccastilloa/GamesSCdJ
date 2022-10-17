@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/perder.mp3-8212e1c12db682befe86a2879d57daf3.mp3str"
+
+[deps]
+
+source_file="res://SONIDOS/perder.mp3"
+dest_files=[ "res://.import/perder.mp3-8212e1c12db682befe86a2879d57daf3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

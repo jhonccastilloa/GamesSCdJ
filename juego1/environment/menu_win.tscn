@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://tipografias/Candal.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/return.png" type="Texture" id=2]
 [ext_resource path="res://assets/exitLeft.png" type="Texture" id=3]
 [ext_resource path="res://juego1/environment/menu_win.gd" type="Script" id=4]
+[ext_resource path="res://SONIDOS/ganar-ganador-.wav" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 28
@@ -56,6 +57,11 @@ margin_bottom = 187.0
 icon = ExtResource( 3 )
 flat = true
 icon_align = 1
+
+[node name="perder" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 5 )
+autoplay = true
 
 [connection signal="pressed" from="HBoxContainer/btn_restart" to="." method="_on_btn_restart_pressed"]
 [connection signal="pressed" from="HBoxContainer/btn_salir" to="." method="_on_btn_salir_pressed"]

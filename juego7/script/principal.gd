@@ -18,6 +18,8 @@ var point=0
 func _ready():
 	randomize()
 	
+	$musica.playing = true
+		
 	tiempo.connect("timeout",self,"tiempo_cumplido")
 	$label.text = str(cantidad_carta)
 
@@ -133,6 +135,8 @@ func _on_card_flipped(carta):
 					print("holi perro")
 					yield(get_tree().create_timer(1),"timeout")
 					_end_game("VOLTEASTES TODAS LAS CARTAS")
+					$ganar.playing = true
+					$musica.playing = false
 			else:
 				_cartas.append(carta_al_descubierto)
 				_cartas.append(carta)
@@ -202,6 +206,9 @@ func _on_tmp_game_timeout():
 	$lbl_tiempo.text=str(time)
 	if(time==0):
 		_end_game("SE ACABO EL TIEMPO")
+		$musica.playing = false
+		$perder.playing = true
+		
 
 func _end_game(text):
 	var end_instance=scene_end.instance()
@@ -215,3 +222,12 @@ func _points():
 	point+=25
 	time+=5
 	$"lbl_puntaje".text=str(point)
+
+var musica=0
+func _on_btn_musica_pressed():
+	$musica.playing = false
+	musica+=1
+	
+	if musica%2==0:
+		$musica.playing = true
+		

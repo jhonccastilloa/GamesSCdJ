@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/billarr.mp3-05176588ae2c0993acc2ae1e95d78f25.mp3str"
+
+[deps]
+
+source_file="res://SONIDOS/billarr.mp3"
+dest_files=[ "res://.import/billarr.mp3-05176588ae2c0993acc2ae1e95d78f25.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

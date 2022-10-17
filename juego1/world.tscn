@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://juego1/environment/LineaGanar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://juego1/zorro/zorro.tscn" type="PackedScene" id=2]
@@ -22,6 +22,11 @@
 [ext_resource path="res://juego1/oveja/oveja9.gd" type="Script" id=20]
 [ext_resource path="res://juego1/oveja/oveja12.gd" type="Script" id=21]
 [ext_resource path="res://juego1/oveja/oveja11.gd" type="Script" id=22]
+[ext_resource path="res://fotos/sonido.png" type="Texture" id=23]
+[ext_resource path="res://SONIDOS/2.mp3" type="AudioStream" id=24]
+[ext_resource path="res://fotos/sonido 2.png" type="Texture" id=25]
+[ext_resource path="res://SONIDOS/morder.wav" type="AudioStream" id=26]
+[ext_resource path="res://SONIDOS/perder (1).wav" type="AudioStream" id=27]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -101,17 +106,26 @@ margin_bottom = 430.0
 [node name="btn_pause" type="TextureButton" parent="."]
 margin_right = 62.0
 margin_bottom = 56.0
+rect_pivot_offset = Vector2( -879, 193 )
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 8 )
+
+[node name="sound" type="TextureButton" parent="."]
+margin_left = 46.0
+margin_right = 108.0
+margin_bottom = 56.0
+rect_pivot_offset = Vector2( -879, 193 )
+texture_normal = ExtResource( 23 )
+texture_pressed = ExtResource( 25 )
 
 [node name="Screen" type="CanvasLayer" parent="."]
 
 [node name="Screen_win" type="CanvasLayer" parent="."]
 
 [node name="lbl_titulo" type="Label" parent="."]
-margin_left = 78.0
+margin_left = 82.0
 margin_top = 9.0
-margin_right = 233.0
+margin_right = 237.0
 margin_bottom = 80.0
 custom_colors/font_color = Color( 0, 1, 0.94902, 1 )
 custom_fonts/font = SubResource( 1 )
@@ -214,6 +228,18 @@ position = Vector2( 145, 216 )
 [node name="drop_zone31" parent="zone" instance=ExtResource( 10 )]
 position = Vector2( 146, 123 )
 
+[node name="soundship" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 24 )
+
+[node name="comer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 26 )
+volume_db = 24.0
+
+[node name="perder" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 27 )
+volume_db = 5.091
+
 [connection signal="area_entered" from="LineaGanar" to="." method="_on_LineaGanar_area_entered"]
 [connection signal="body_entered" from="oveja" to="oveja" method="_on_oveja13_body_entered"]
 [connection signal="input_event" from="oveja" to="oveja" method="_on_oveja13_input_event"]
@@ -240,3 +266,4 @@ position = Vector2( 146, 123 )
 [connection signal="body_entered" from="oveja12" to="oveja12" method="_on_oveja13_body_entered"]
 [connection signal="input_event" from="oveja12" to="oveja12" method="_on_oveja13_input_event"]
 [connection signal="pressed" from="btn_pause" to="." method="_on_btn_pause_pressed"]
+[connection signal="pressed" from="sound" to="." method="_on_sound_pressed"]

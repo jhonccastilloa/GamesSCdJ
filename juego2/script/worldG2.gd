@@ -14,7 +14,7 @@ var empate=true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print(board)
-	
+	$music.playing = true
 	pass # Replace with function body.
 
 #func decirHola():
@@ -139,3 +139,14 @@ func _on_btn_pause_pressed():
 func on_restart():
 	get_tree().paused=0
 	get_tree().change_scene("res://juego2/worldG2.tscn")
+
+var musica=0
+func _on_btn_musica_pressed():
+	$music.playing = false
+	musica+=1
+	
+	if musica%2==0:
+		$music.playing = true
+		
+		
+	

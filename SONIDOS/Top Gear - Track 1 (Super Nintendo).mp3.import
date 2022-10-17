@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Top Gear - Track 1 (Super Nintendo).mp3-2db799a68bb3d9fe966e21aee6bfc182.mp3str"
+
+[deps]
+
+source_file="res://SONIDOS/Top Gear - Track 1 (Super Nintendo).mp3"
+dest_files=[ "res://.import/Top Gear - Track 1 (Super Nintendo).mp3-2db799a68bb3d9fe966e21aee6bfc182.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

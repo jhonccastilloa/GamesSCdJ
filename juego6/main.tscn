@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://juego6/script/main.gd" type="Script" id=1]
 [ext_resource path="res://juego6/art/lineDark21.png" type="Texture" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://juego6/art/lineDark20.png" type="Texture" id=8]
 [ext_resource path="res://assets/pause.png" type="Texture" id=9]
 [ext_resource path="res://juego6/art/CANCHA (1) (1).png" type="Texture" id=10]
+[ext_resource path="res://SONIDOS/balones.mp3" type="AudioStream" id=11]
+[ext_resource path="res://fotos/musica.png" type="Texture" id=12]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -83,7 +85,14 @@ normal = ExtResource( 3 )
 position = Vector2( 678, 2 )
 normal = ExtResource( 9 )
 
+[node name="btn_musica" type="TouchScreenButton" parent="."]
+position = Vector2( 638, 2 )
+normal = ExtResource( 12 )
+
 [node name="Screen" type="CanvasLayer" parent="."]
+
+[node name="musica" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 11 )
 
 [connection signal="start_game" from="HUD" to="." method="new_game"]
 [connection signal="hit" from="player" to="." method="game_over"]
@@ -99,3 +108,4 @@ normal = ExtResource( 9 )
 [connection signal="pressed" from="Controles/tbs_down" to="player" method="_on_tbs_down_pressed"]
 [connection signal="released" from="Controles/tbs_down" to="player" method="_on_tbs_down_released"]
 [connection signal="pressed" from="btn_pause" to="." method="_on_TouchScreenButton_pressed"]
+[connection signal="pressed" from="btn_musica" to="." method="_on_btn_musica_pressed"]

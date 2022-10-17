@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/morder.mp3-cd76eb9e268ae4d7e2063e40e247b634.mp3str"
+
+[deps]
+
+source_file="res://SONIDOS/morder.mp3"
+dest_files=[ "res://.import/morder.mp3-cd76eb9e268ae4d7e2063e40e247b634.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

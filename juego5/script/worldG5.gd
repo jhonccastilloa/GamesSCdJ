@@ -7,7 +7,9 @@ var scene_win = load("res://juego5/scenes/menu_end.tscn")
 var win_player=""
 var time=5
 func _ready():
+	$musica.playing = true
 	get_tree().paused=true
+	
 	pass # Replace with function body.
 
 func _on_salir_pressed():
@@ -17,6 +19,8 @@ func _on_salir_pressed():
 func _on_a_win_player2_area_entered(area):
 	print("hola")
 	_win("2")
+	$musica.playing = false
+	$ganar.playing = true
 	
 func _win(player):
 	get_node("tsb_player1").queue_free()
@@ -33,6 +37,8 @@ func _create_hud():
 func _on_a_win_player1_area_entered(area):
 	print("hola")
 	_win("1")
+	$musica.playing = false
+	$ganar.playing = true
 	
 func _on_btn_pause_pressed():
 	if !pause:
@@ -60,3 +66,13 @@ func _init_game():
 	$Timer.autostart=false
 	$lbl_timeout.visible=0
 	get_tree().paused=false
+
+var musica=0
+func _on_btn_musica_pressed():
+	$musica.playing = false
+	musica+=1
+	
+	if musica%2==0:
+		$musica.playing = true
+		
+		

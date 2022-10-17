@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bateria.mp3-0623900a9c0488cf9f9d9a6d83ef5732.mp3str"
+
+[deps]
+
+source_file="res://SONIDOS/bateria.mp3"
+dest_files=[ "res://.import/bateria.mp3-0623900a9c0488cf9f9d9a6d83ef5732.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

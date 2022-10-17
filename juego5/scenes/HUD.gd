@@ -11,6 +11,7 @@ func _ready():
 	
 	var player_win=get_parent().win_player
 	$Label.text="GANO EL JUGADOR " + player_win
+	
 	pass # Replace with function body.
 
 

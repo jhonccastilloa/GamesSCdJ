@@ -1,17 +1,19 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://MENU/FONDO PARA MINIJUEGOS/MINIJUEGOS.png" type="Texture" id=1]
 [ext_resource path="res://MenuGames.gd" type="Script" id=2]
 [ext_resource path="res://assets/Button_style.tres" type="StyleBox" id=3]
-[ext_resource path="res://assets/miniaturas/juego4.png" type="Texture" id=4]
-[ext_resource path="res://assets/miniaturas/juego1.png" type="Texture" id=5]
-[ext_resource path="res://assets/miniaturas/juego6.png" type="Texture" id=6]
-[ext_resource path="res://assets/miniaturas/juego5.png" type="Texture" id=7]
-[ext_resource path="res://assets/miniaturas/juego2.png" type="Texture" id=8]
-[ext_resource path="res://assets/miniaturas/juego3.png" type="Texture" id=9]
+[ext_resource path="res://fotos/152-90/llantas.jpg" type="Texture" id=4]
+[ext_resource path="res://fotos/152-90/balones.jpg" type="Texture" id=5]
+[ext_resource path="res://fotos/152-90/tres en raya.jpg" type="Texture" id=6]
+[ext_resource path="res://fotos/152-90/memoria.jpg" type="Texture" id=7]
+[ext_resource path="res://fotos/152-90/canicas.jpg" type="Texture" id=8]
+[ext_resource path="res://fotos/152-90/zorro.png" type="Texture" id=9]
 [ext_resource path="res://assets/button_press.tres" type="StyleBox" id=10]
 [ext_resource path="res://tipografias/Candal.ttf" type="DynamicFontData" id=11]
 [ext_resource path="res://tipografias/FuenteMenu.tres" type="DynamicFont" id=12]
+[ext_resource path="res://SONIDOS/1.mp3" type="AudioStream" id=13]
+[ext_resource path="res://fotos/sonido.png" type="Texture" id=14]
 
 [sub_resource type="DynamicFont" id=2]
 size = 21
@@ -119,7 +121,7 @@ margin_right = 162.0
 margin_bottom = 100.0
 custom_styles/pressed = ExtResource( 10 )
 custom_styles/normal = ExtResource( 3 )
-icon = ExtResource( 5 )
+icon = ExtResource( 9 )
 icon_align = 1
 
 [node name="juego2" type="Button" parent="VBoxBOtones/row_1"]
@@ -128,21 +130,21 @@ margin_right = 334.0
 margin_bottom = 100.0
 custom_styles/pressed = ExtResource( 10 )
 custom_styles/normal = ExtResource( 3 )
-icon = ExtResource( 8 )
+icon = ExtResource( 6 )
 icon_align = 1
 
 [node name="juego3" type="Button" parent="VBoxBOtones/row_1"]
 margin_left = 344.0
-margin_right = 506.0
+margin_right = 505.0
 margin_bottom = 100.0
 custom_styles/pressed = ExtResource( 10 )
 custom_styles/normal = ExtResource( 3 )
-icon = ExtResource( 9 )
+icon = ExtResource( 8 )
 icon_align = 1
 
 [node name="juego4" type="Button" parent="VBoxBOtones/row_1"]
-margin_left = 516.0
-margin_right = 678.0
+margin_left = 515.0
+margin_right = 676.0
 margin_bottom = 100.0
 custom_styles/pressed = ExtResource( 10 )
 custom_styles/normal = ExtResource( 3 )
@@ -160,7 +162,7 @@ margin_right = 162.0
 margin_bottom = 100.0
 custom_styles/pressed = ExtResource( 10 )
 custom_styles/normal = ExtResource( 3 )
-icon = ExtResource( 7 )
+icon = ExtResource( 5 )
 icon_align = 1
 
 [node name="juego6" type="Button" parent="VBoxBOtones/row_2"]
@@ -169,7 +171,7 @@ margin_right = 334.0
 margin_bottom = 100.0
 custom_styles/pressed = ExtResource( 10 )
 custom_styles/normal = ExtResource( 3 )
-icon = ExtResource( 6 )
+icon = ExtResource( 7 )
 icon_align = 1
 
 [node name="juego7" type="Button" parent="VBoxBOtones/row_2"]
@@ -192,6 +194,17 @@ custom_styles/normal = ExtResource( 3 )
 text = "REGRESAR"
 icon_align = 1
 
+[node name="musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+
+[node name="musica2" type="Button" parent="."]
+margin_left = 667.0
+margin_top = 379.0
+margin_right = 727.0
+margin_bottom = 433.0
+icon = ExtResource( 14 )
+flat = true
+
 [connection signal="pressed" from="VBoxBOtones/row_1/juego1" to="." method="_on_juego1_pressed"]
 [connection signal="pressed" from="VBoxBOtones/row_1/juego2" to="." method="_on_juego2_pressed"]
 [connection signal="pressed" from="VBoxBOtones/row_1/juego3" to="." method="_on_juego3_pressed"]
@@ -199,3 +212,4 @@ icon_align = 1
 [connection signal="pressed" from="VBoxBOtones/row_2/juego5" to="." method="_on_juego5_pressed"]
 [connection signal="pressed" from="VBoxBOtones/row_2/juego6" to="." method="_on_juego6_pressed"]
 [connection signal="pressed" from="VBoxBOtones/row_2/salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="musica2" to="." method="_on_musica2_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://juego5/script/worldG5.gd" type="Script" id=1]
 [ext_resource path="res://juego5/environment/shadedLight49.png" type="Texture" id=2]
@@ -9,6 +9,9 @@
 [ext_resource path="res://juego5/scenes/scenario.tscn" type="PackedScene" id=7]
 [ext_resource path="res://juego5/environment/shadedDark49.png" type="Texture" id=8]
 [ext_resource path="res://tipografias/Candal.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://SONIDOS/Top Gear - Track 1 (Super Nintendo).mp3" type="AudioStream" id=10]
+[ext_resource path="res://fotos/sonido.png" type="Texture" id=11]
+[ext_resource path="res://SONIDOS/ganar-ganador-.wav" type="AudioStream" id=12]
 
 [sub_resource type="Curve2D" id=5]
 _data = {
@@ -120,6 +123,14 @@ margin_bottom = 20.0
 icon = ExtResource( 6 )
 flat = true
 
+[node name="btn_musica" type="Button" parent="."]
+pause_mode = 2
+margin_left = 42.0
+margin_right = 104.0
+margin_bottom = 56.0
+icon = ExtResource( 11 )
+flat = true
+
 [node name="Screen" type="CanvasLayer" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
@@ -137,9 +148,18 @@ text = "5"
 align = 1
 valign = 1
 
+[node name="musica" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 10 )
+
+[node name="ganar" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 12 )
+
 [connection signal="released" from="tsb_player1" to="Path_player1/PathF_player1" method="_on_tsb_player1_released"]
 [connection signal="released" from="tsb_player2" to="path_player2/pf_player2" method="_on_tsb_player2_released"]
 [connection signal="area_entered" from="a_win_player2" to="." method="_on_a_win_player2_area_entered"]
 [connection signal="area_entered" from="a_win_player1" to="." method="_on_a_win_player1_area_entered"]
 [connection signal="pressed" from="btn_pause" to="." method="_on_btn_pause_pressed"]
+[connection signal="pressed" from="btn_musica" to="." method="_on_btn_musica_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

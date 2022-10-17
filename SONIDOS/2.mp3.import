@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/2.mp3-661c1d5fbc6fe52c3cc41b5a0235b5bc.mp3str"
+
+[deps]
+
+source_file="res://SONIDOS/2.mp3"
+dest_files=[ "res://.import/2.mp3-661c1d5fbc6fe52c3cc41b5a0235b5bc.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

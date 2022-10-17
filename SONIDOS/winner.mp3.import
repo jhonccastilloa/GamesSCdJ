@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/winner.mp3-6651655b2144f625e7f3fbf856063d58.mp3str"
+
+[deps]
+
+source_file="res://SONIDOS/winner.mp3"
+dest_files=[ "res://.import/winner.mp3-6651655b2144f625e7f3fbf856063d58.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
