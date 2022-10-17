@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://MENU/FONDO PARA MINIJUEGOS/MINIJUEGOS.png" type="Texture" id=1]
 [ext_resource path="res://MenuGames.gd" type="Script" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://tipografias/FuenteMenu.tres" type="DynamicFont" id=12]
 [ext_resource path="res://SONIDOS/11.mp3" type="AudioStream" id=13]
 [ext_resource path="res://fotos/sonido.png" type="Texture" id=14]
+[ext_resource path="res://fotos/152-90/trivial.jpg" type="Texture" id=15]
 
 [sub_resource type="DynamicFont" id=2]
 size = 21
@@ -112,7 +113,7 @@ alignment = 1
 
 [node name="row_1" type="HBoxContainer" parent="VBoxBOtones"]
 margin_top = 20.0
-margin_right = 680.0
+margin_right = 681.0
 margin_bottom = 120.0
 custom_constants/separation = 10
 
@@ -153,7 +154,7 @@ icon_align = 1
 
 [node name="row_2" type="HBoxContainer" parent="VBoxBOtones"]
 margin_top = 160.0
-margin_right = 680.0
+margin_right = 681.0
 margin_bottom = 260.0
 custom_constants/separation = 10
 
@@ -176,17 +177,17 @@ icon_align = 1
 
 [node name="juego7" type="Button" parent="VBoxBOtones/row_2"]
 margin_left = 344.0
-margin_right = 499.0
+margin_right = 506.0
 margin_bottom = 100.0
 custom_fonts/font = SubResource( 2 )
 custom_styles/pressed = ExtResource( 10 )
 custom_styles/normal = ExtResource( 3 )
-text = "MUY PRONTO"
+icon = ExtResource( 15 )
 icon_align = 1
 
 [node name="salir" type="Button" parent="VBoxBOtones/row_2"]
-margin_left = 509.0
-margin_right = 674.0
+margin_left = 516.0
+margin_right = 681.0
 margin_bottom = 100.0
 custom_fonts/font = SubResource( 1 )
 custom_styles/pressed = ExtResource( 10 )
