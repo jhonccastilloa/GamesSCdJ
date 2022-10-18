@@ -150,7 +150,7 @@ margin_right = 95.0
 margin_bottom = 88.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 10 )
-text = "0"
+text = "00"
 
 [node name="lbl_tiempo" type="Label" parent="."]
 margin_left = 329.0

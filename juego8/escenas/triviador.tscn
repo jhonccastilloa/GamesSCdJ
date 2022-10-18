@@ -70,9 +70,9 @@ text = "SALIR"
 flat = true
 
 [node name="nivel1" type="Button" parent="Control"]
-margin_left = 249.0
+margin_left = 239.0
 margin_top = 45.0
-margin_right = 423.0
+margin_right = 413.0
 margin_bottom = 98.0
 custom_colors/font_color_pressed = Color( 0.0784314, 1, 0, 1 )
 custom_fonts/font = SubResource( 1 )
